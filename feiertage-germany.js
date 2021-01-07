@@ -906,10 +906,6 @@ module.exports = function(RED) {
                 stMartin[2] = getStMartin(formatDateObj, currentYear + 1);
                 stMartin[3] = getStMartin(formatDE, currentYear + 1);
             }
-            if ((new Date(stLeopold[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                stLeopold[2] = getStLeopold(formatDateObj, currentYear + 1);
-                stLeopold[3] = getStLeopold(formatDE, currentYear + 1);
-            }
             if ((new Date(bussUndBettag[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
                 bussUndBettag[2] = getBussUndBettag(formatDateObj, currentYear + 1);
                 bussUndBettag[3] = getBussUndBettag(formatDE, currentYear + 1);
