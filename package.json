@@ -44,7 +44,7 @@
     "name": "node-red-contrib-feiertage-germany",
     "node-red": {
       "nodes": {
-        "feiertage": "feiertage-germany.js"
+        "feiertageDE": "feiertage-germany.js"
       }
     },
     "repository": {
