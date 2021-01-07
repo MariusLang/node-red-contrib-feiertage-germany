@@ -1,4 +1,4 @@
-![banner](https://github.com/MariusLang/node-red-contrib-feiertage-germany/blob/master/img/feiertage_banner_at.svg)
+![banner](https://github.com/MariusLang/node-red-contrib-feiertage-germany/blob/master/img/feiertage_banner_de.svg)
 # Node Red Feiertage Germany
 
 [![NPM](https://img.shields.io/npm/v/node-red-contrib-feiertage-germany)](https://www.npmjs.com/package/node-red-contrib-feiertage-germany)
