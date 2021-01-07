@@ -1,0 +1,826 @@
+<script type="text/html" data-template-name="feiertageDE">
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-neujahr" placeholder="Neujahr"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-neujahrName" placeholder="Neujahr">
+        <label for="node-input-neujahrName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-heiligeDreiKoenige" placeholder="Heilige Drei Könige"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-heiligeDreiKoenigeName" placeholder="Heilige Drei Könige">
+        <label for="node-input-heiligeDreiKoenigeName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-weiberfastnacht" placeholder="Weiberfastnacht"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-weiberfastnachtName" placeholder="Weiberfastnacht">
+        <label for="node-input-weiberfastnachtName"><i class="fa fa-map-marker"></i> DE</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-valentinstag" placeholder="Valentinstag"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-valentinstagName" placeholder="Valentinstag">
+        <label for="node-input-valentinstagName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-rosenmontag" placeholder="Rosenmontag"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-rosenmontagName" placeholder="Rosenmontag">
+        <label for="node-input-rosenmontagName"><i class="fa fa-map-marker"></i> DE, AT</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-fastnachtsdienstag" placeholder="Fastnachtsdienstag"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-fastnachtsdienstagName" placeholder="Fastnachtsdienstag">
+        <label for="node-input-fastnachtsdienstagName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-aschermittwoch" placeholder="Aschermittwoch"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-aschermittwochName" placeholder="Aschermittwoch">
+        <label for="node-input-aschermittwochName"><i class="fa fa-map-marker"></i> DE, AT</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-gruendonnerstag" placeholder="Gründonnerstag"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-gruendonnerstagName" placeholder="Gründonnerstag">
+        <label for="node-input-gruendonnerstagName"><i class="fa fa-map-marker"></i> DE, AT</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-karfreitag" placeholder="Karfreitag"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-karfreitagName" placeholder="Karfreitag">
+        <label for="node-input-karfreitagName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-easterSunday" placeholder="Ostersonntag"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-easterSundayName" placeholder="Ostersonntag">
+        <label for="node-input-easterSundayName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-easterMonday" placeholder="Ostermontag"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-easterMondayName" placeholder="Ostermontag">
+        <label for="node-input-easterMondayName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-firstMay" placeholder="1.Mai"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-firstMayName" placeholder="1. Mai">
+        <label for="node-input-firstMayName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-christiHimmelfahrt" placeholder="Christi Himmelfahrt"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-christiHimmelfahrtName" placeholder="Christi Himmelfahrt">
+        <label for="node-input-christiHimmelfahrtName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-pfingstsonntag" placeholder="Pfingstsonntag"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-pfingstsonntagName" placeholder="Pfingstsonntag">
+        <label for="node-input-pfingstsonntagName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-pfingstmontag" placeholder="Pfingstmontag"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-pfingstmontagName" placeholder="Pfingstmontag">
+        <label for="node-input-pfingstmontagName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-fronleichnam" placeholder="Fronleichnam"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-fronleichnamName" placeholder="Fronleichnam">
+        <label for="node-input-fronleichnamName"><i class="fa fa-map-marker"></i> DE, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-mariaHimmelfahrt" placeholder="Maria Himmelfahrt"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-mariaHimmelfahrtName" placeholder="Maria Himmelfahrt">
+        <label for="node-input-mariaHimmelfahrtName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-tagDerDeutschenEinheit" placeholder="Tag der Deutschen Einheit"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-tagDerDeutschenEinheitName" placeholder="Tag Der Deutschen Einheit">
+        <label for="node-input-tagDerDeutschenEinheitName"><i class="fa fa-map-marker"></i> DE</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-halloween" placeholder="Halloween"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-halloweenName" placeholder="Halloween">
+        <label for="node-input-halloweenName"><i class="fa fa-map-marker"></i> DE, AT</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-allerheiligen" placeholder="Allerheiligen"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-allerheiligenName" placeholder="Allerheiligen">
+        <label for="node-input-allerheiligenName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-stMartin" placeholder="St. Martin"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-stMartinName" placeholder="St. Martin">
+        <label for="node-input-stMartinName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-bussUndBettag" placeholder="Buß und Bettag"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-bussUndBettagName" placeholder="Buß und Bettag">
+        <label for="node-input-bussUndBettagName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-nikolaus" placeholder="Nikolaus"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-nikolausName" placeholder="Nikolaus">
+        <label for="node-input-nikolausName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-advent1" placeholder="1. Advent"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-advent1Name" placeholder="1. Advent">
+        <label for="node-input-advent1Name"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-advent2" placeholder="2. Advent"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-advent2Name" placeholder="2. Advent">
+        <label for="node-input-advent2Name"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-advent3" placeholder="3. Advent"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-advent3Name" placeholder="3. Advent">
+        <label for="node-input-advent3Name"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-advent4" placeholder="4. Advent"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-advent4Name" placeholder="4. Advent">
+        <label for="node-input-advent4Name"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-heiligabend" placeholder="Heiligabend"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-heiligabendName" placeholder="Heiligabend">
+        <label for="node-input-heiligabendName"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-weihnachten1" placeholder="1. Weihnachtsfeiertag"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-weihnachten1Name" placeholder="1. Weihnachtsfeiertag">
+        <label for="node-input-weihnachten1Name"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-weihnachten2" placeholder="2. Weihnachtsfeiertag"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-weihnachten2Name" placeholder="2. Weihnachtsfeiertag">
+        <label for="node-input-weihnachten2Name"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-silvester" placeholder="Silvester"></span>
+        <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-silvesterName" placeholder="Silvester">
+        <label for="node-input-silvester"><i class="fa fa-map-marker"></i> DE, AT, CH</label>
+    </div>
+
+    <hr>
+
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-ownHoliday1" placeholder="Own Holiday1"></span>
+        <i class="fa fa-calendar"></i> <select style="width: 50px;" id="node-input-ownHoliday1Day">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+        <select style="width: 50px;" id="node-input-ownHoliday1Month">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <input style="width: 200px;" type="text" id="node-input-ownHoliday1Name" placeholder="Holiday 1">
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-ownHoliday2" placeholder="Own Holiday2"></span>
+        <i class="fa fa-calendar"></i> <select style="width: 50px;" id="node-input-ownHoliday2Day">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+        <select style="width: 50px;" id="node-input-ownHoliday2Month">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <input style="width: 200px;" type="text" id="node-input-ownHoliday2Name" placeholder="Holiday 2">
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-ownHoliday3" placeholder="Own Holiday3"></span>
+        <i class="fa fa-calendar"></i> <select style="width: 50px;" id="node-input-ownHoliday3Day">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+        <select style="width: 50px;" id="node-input-ownHoliday3Month">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <input style="width: 200px;" type="text" id="node-input-ownHoliday3Name" placeholder="Holiday 3">
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-ownHoliday4" placeholder="Own Holiday4"></span>
+        <i class="fa fa-calendar"></i> <select style="width: 50px;" id="node-input-ownHoliday4Day">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+        <select style="width: 50px;" id="node-input-ownHoliday4Month">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <input style="width: 200px;" type="text" id="node-input-ownHoliday4Name" placeholder="Holiday 4">
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-ownHoliday5" placeholder="Own Holiday5"></span>
+        <i class="fa fa-calendar"></i> <select style="width: 50px;" id="node-input-ownHoliday5Day">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+        <select style="width: 50px;" id="node-input-ownHoliday5Month">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <input style="width: 200px;" type="text" id="node-input-ownHoliday5Name" placeholder="Holiday 5">
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-ownHoliday6" placeholder="Own Holiday6"></span>
+        <i class="fa fa-calendar"></i> <select style="width: 50px;" id="node-input-ownHoliday6Day">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+        <select style="width: 50px;" id="node-input-ownHoliday6Month">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <input style="width: 200px;" type="text" id="node-input-ownHoliday6Name" placeholder="Holiday 6">
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-ownHoliday7" placeholder="Own Holiday7"></span>
+        <i class="fa fa-calendar"></i> <select style="width: 50px;" id="node-input-ownHoliday7Day">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+        <select style="width: 50px;" id="node-input-ownHoliday7Month">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <input style="width: 200px;" type="text" id="node-input-ownHoliday7Name" placeholder="Holiday 7">
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-ownHoliday8" placeholder="Own Holiday8"></span>
+        <i class="fa fa-calendar"></i> <select style="width: 50px;" id="node-input-ownHoliday8Day">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+        <select style="width: 50px;" id="node-input-ownHoliday8Month">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <input style="width: 200px;" type="text" id="node-input-ownHoliday8Name" placeholder="Holiday 8">
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-ownHoliday9" placeholder="Own Holiday9"></span>
+        <i class="fa fa-calendar"></i> <select style="width: 50px;" id="node-input-ownHoliday9Day">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+        <select style="width: 50px;" id="node-input-ownHoliday9Month">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <input style="width: 200px;" type="text" id="node-input-ownHoliday9Name" placeholder="Holiday 9">
+    </div>
+    <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-ownHoliday10" placeholder="Own Holiday10"></span>
+        <i class="fa fa-calendar"></i> <select style="width: 50px;" id="node-input-ownHoliday10Day">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+        <select style="width: 50px;" id="node-input-ownHoliday10Month">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <input style="width: 200px;" type="text" id="node-input-ownHoliday10Name" placeholder="Holiday 10">
+    </div>
+
+    <hr>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="feiertageDE">
+    <h3><span style="color: #339900;">Details</span></h3>
+    <p>The Node Red <b>Feiertage</b> Node is the ultimative Node to get informations about german and austrian holidays.</p>
+    <p>It's important to pick the right localisation and timezone settings on your device! You can find more informations <a href="https://github.com/MariusLang/node-red-contrib-feiertage">here</a></p>
+
+    <h3><span style="color: #339900;">Input</span></h3>
+    <p>The input can be used to trigger special outputs. The keywords are listed below.</p>
+    <ul>
+        <li><p><b>isTodayHoliday</b> outputs boolean wether today is holiday</p></li>
+        <li><p><b>nextHoliday</b> outputs next holiday</p></li>
+        <li><p><b>nextThreeHolidays</b> outputs next 3 holidays</p></li>
+        <li><p><b>all</b> outputs every holiday</p></li>
+    </ul>
+
+    <h3><span style="color: #339900">Output</span></h3>
+    <p>The output can be used to listen to automatic and user triggerd events.</p>
+    <p>Every day at 00:01 o'clock the node outputs a boolean value wether today is a holiday.</p>
+    <p>Holidays are always listed into an array[3].</p>
+    <ul>
+        <li><p><b>index 0:</b> english name</p></li>
+        <li><p><b>index 1:</b> german name</p></li>
+        <li><p><b>index 2:</b> date (yyyy-mm-dd)</p></li>
+    </ul>
+
+    <h3><span style="color: #339900">own Holidays</span></h3>
+    <p>You can chose up to 10 own dates. Select the day in the first dropdown menu and the month in the second. Chose a name for your holiday and type it into the input field. Don't forget to hit the checkbox to enable your own holiday. Pay attention: The node does NOT validate your own dates. So if you set the 30 febrary or the 31 april as date you wont't get an error message.</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('feiertageDE',{
+        category: 'calendar',
+        color: "#339900",
+        inputLabels: "manual request",
+        outputLabels: "feiertage",
+        defaults: {
+            name: {value: "Feiertage DE", required: true},
+            local: {value: "DE", required: true},
+            neujahr: {value: true},
+            neujahrName: {value: "Neujahr", required: true},
+            heiligeDreiKoenige: {value: true},
+            heiligeDreiKoenigeName: {value: "Heilige drei Könige", required: true},
+            weiberfastnacht: {value: true},
+            weiberfastnachtName: {value: "Weiberfastnacht", required: true},
+            valentinstag: {value: true},
+            valentinstagName: {value: "Valentinstag", required: true},
+            rosenmontag: {value: true},
+            rosenmontagName: {value: "Rosenmontag", required: true},
+            fastnachtsdienstag: {value: true},
+            fastnachtsdienstagName: {value: "Fastnachtdienstag", required: true},
+            aschermittwoch: {value: true},
+            aschermittwochName: {value: "Aschermittwoch", required: true},
+            gruendonnerstag: {value: true},
+            gruendonnerstagName: {value: "Gründonnerstag", required: true},
+            karfreitag: {value: true},
+            karfreitagName: {value: "Karfreitag", required: true},
+            easterSunday: {value: true},
+            easterSundayName: {value: "Ostersonntag", required: true},
+            easterMonday: {value: true},
+            easterMondayName: {value: "Ostermontag", required: true},
+            firstMay: {value: true},
+            firstMayName: {value: "1. Mai", required: true},
+            christiHimmelfahrt: {value: true},
+            christiHimmelfahrtName: {value: "Christi Himmelfahrt", required: true},
+            pfingstsonntag: {value: true},
+            pfingstsonntagName: {value: "Pfingstsonntag", required: true},
+            pfingstmontag: {value: true},
+            pfingstmontagName: {value: "Pfingstmontag", required: true},
+            fronleichnam: {value: true},
+            fronleichnamName: {value: "Fronleichnam", required: true},
+            mariaHimmelfahrt: {value: true},
+            mariaHimmelfahrtName: {value: "Maria Himmelfahrt", required: true},
+            tagDerDeutschenEinheit: {value: true},
+            tagDerDeutschenEinheitName: {value: "Tag der Deutschen Einheit", required: true},
+            halloween: {value: true},
+            halloweenName: {value: "Halloween", required: true},
+            allerheiligen: {value: true},
+            allerheiligenName: {value: "Allerheiligen", required: true},
+            stMartin: {value: true},
+            stMartinName: {value: "St. Martin", required: true},
+            bussUndBettag: {value: true},
+            bussUndBettagName: {value: "Buß und Bettag", required: true},
+            nikolaus: {value: true},
+            nikolausName: {value: "Nikolaus", required: true},
+            advent1: {value: true},
+            advent1Name: {value: "1. Advent", required: true},
+            advent2: {value: true},
+            advent2Name: {value: "2. Advent", required: true},
+            advent3: {value: true},
+            advent3Name: {value: "3. Advent", required: true},
+            advent4: {value: true},
+            advent4Name: {value: "4. Advent", required: true},
+            heiligabend: {value: true},
+            heiligabendName: {value: "Heiligabend", required: true},
+            weihnachten1: {value: true},
+            weihnachten1Name: {value: "1. Weihnachtsfeiertag", required: true},
+            weihnachten2: {value: true},
+            weihnachten2Name: {value: "2. Weihnachtsfeiertag", required: true},
+            silvester: {value: true},
+            silvesterName: {value: "Silvester", required: true},
+            ownHoliday1: {value: false},
+            ownHoliday1Day: {value: 1},
+            ownHoliday1Month: {value: 1},
+            ownHoliday1Name: {value: "own Date 1"},
+            ownHoliday2: {value: false},
+            ownHoliday2Day: {value: 2},
+            ownHoliday2Month: {value: 2},
+            ownHoliday2Name: {value: "own Date 2"},
+            ownHoliday3: {value: false},
+            ownHoliday3Day: {value: 3},
+            ownHoliday3Month: {value: 3},
+            ownHoliday3Name: {value: "own Date 3"},
+            ownHoliday4: {value: false},
+            ownHoliday4Day: {value: 4},
+            ownHoliday4Month: {value: 4},
+            ownHoliday4Name: {value: "own Date 4"},
+            ownHoliday5: {value: false},
+            ownHoliday5Day: {value: 5},
+            ownHoliday5Month: {value: 5},
+            ownHoliday5Name: {value: "own Date 5"},
+            ownHoliday6: {value: false},
+            ownHoliday6Day: {value: 6},
+            ownHoliday6Month: {value: 6},
+            ownHoliday6Name: {value: "own Date 6"},
+            ownHoliday7: {value: false},
+            ownHoliday7Day: {value: 7},
+            ownHoliday7Month: {value: 7},
+            ownHoliday7Name: {value: "own Date 7"},
+            ownHoliday8: {value: false},
+            ownHoliday8Day: {value: 8},
+            ownHoliday8Month: {value: 8},
+            ownHoliday8Name: {value: "own Date 8"},
+            ownHoliday9: {value: false},
+            ownHoliday9Day: {value: 9},
+            ownHoliday9Month: {value: 9},
+            ownHoliday9Name: {value: "own Date 9"},
+            ownHoliday10: {value: false},
+            ownHoliday10Day: {value: 10},
+            ownHoliday10Month: {value: 10},
+            ownHoliday10Name: {value: "own Date 10"}
+		},
+        inputs: 1,
+        outputs: 1,
+        icon: "icon.svg",
+        label: function() {
+            return this.name||"feiertageDE";
+        },
+    });
+</script>
