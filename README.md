@@ -5,7 +5,7 @@
 [![NPM_downloads](https://img.shields.io/npm/dm/node-red-contrib-feiertage-germany)](https://www.npmjs.com/package/node-red-contrib-feiertage-germany)
 [![issues](https://img.shields.io/github/issues/mariuslang/node-red-contrib-feiertage-germany)](https://github.com/MariusLang/node-red-contrib-germany/issues)
 
-[![NPM](https://nodei.co/npm/node-red-contrib-feiertage-austria.png?compact=true)](https://nodei.co/npm/node-red-contrib-feiertage-austria/)
+[![NPM](https://nodei.co/npm/node-red-contrib-feiertage-germany.png?compact=true)](https://nodei.co/npm/node-red-contrib-feiertage-germany/)
 
 The Node Red **Feiertage Germany** node is the ultimative node to get informations about german holidays.
 
