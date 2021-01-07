@@ -1,63 +1,63 @@
 {
-    "author": "Marius Lang <lang.marius@t-online.de>",
-    "dependencies": {},
-    "deprecated": false,
-    "description": "NodeRED node to get german holidays and own special dates",
-    "keywords": [
-      "node-red",
-      "holidays",
-      "feiertage",
-      "publicholiday",
-      "german",
-      "germanholidays",
-      "date",
-      "New Year",
-      "Heilige Drei Könige",
-      "Weiberfastnacht",
-      "Valentinstag",
-      "Rosenmontag",
-      "Fastnachtsdienstag",
-      "Aschermittwoch",
-      "Gründonnerstag",
-      "Karfreitag",
-      "Ostersonntag",
-      "Ostermontag",
-      "Christi Himmelfahrt",
-      "Pfingstsonntag",
-      "Pfingstmontag",
-      "Fronleichnam",
-      "Maria Himmelfahrt",
-      "Tag der Deutschen Einheit",
-      "Halloween",
-      "Allerheiligen",
-      "St. Martin",
-      "Buß und Bettag",
-      "Advent",
-      "Heiligabend",
-      "Weihnachten",
-      "1. Weihnachtsfeiertag",
-      "2. Weihnachtsfeiertag",
-      "schedule",
-      "calendar"
-    ],
-    "license": "MIT",
-    "name": "node-red-contrib-feiertage-germany",
-    "node-red": {
-      "nodes": {
-        "feiertageDE": "feiertage-germany.js"
-      }
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/MariusLang/node-red-contrib-feiertage-germany.git"
-    },
-    "version": "0.9.2",
-    "bugs": {
-      "url": "https://github.com/MariusLang/node-red-contrib-feiertage-germany/issues"
-    },
-    "homepage": "https://github.com/MariusLang/node-red-contrib-feiertage-germany#readme",
-    "main": "feiertage.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+  "author": "Marius Lang <lang.marius@t-online.de>",
+  "dependencies": {},
+  "deprecated": false,
+  "description": "NodeRED node to get german holidays and own special dates",
+  "keywords": [
+    "node-red",
+    "holidays",
+    "feiertage",
+    "publicholiday",
+    "german",
+    "germanholidays",
+    "date",
+    "New Year",
+    "Heilige Drei Könige",
+    "Weiberfastnacht",
+    "Valentinstag",
+    "Rosenmontag",
+    "Fastnachtsdienstag",
+    "Aschermittwoch",
+    "Gründonnerstag",
+    "Karfreitag",
+    "Ostersonntag",
+    "Ostermontag",
+    "Christi Himmelfahrt",
+    "Pfingstsonntag",
+    "Pfingstmontag",
+    "Fronleichnam",
+    "Maria Himmelfahrt",
+    "Tag der Deutschen Einheit",
+    "Halloween",
+    "Allerheiligen",
+    "St. Martin",
+    "Buß und Bettag",
+    "Advent",
+    "Heiligabend",
+    "Weihnachten",
+    "1. Weihnachtsfeiertag",
+    "2. Weihnachtsfeiertag",
+    "schedule",
+    "calendar"
+  ],
+  "license": "MIT",
+  "name": "node-red-contrib-feiertage-germany",
+  "node-red": {
+    "nodes": {
+      "feiertageDE": "feiertage-germany.js"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariusLang/node-red-contrib-feiertage-germany.git"
+  },
+  "version": "0.9.2",
+  "bugs": {
+    "url": "https://github.com/MariusLang/node-red-contrib-feiertage-germany/issues"
+  },
+  "homepage": "https://github.com/MariusLang/node-red-contrib-feiertage-germany#readme",
+  "main": "feiertage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
+}
