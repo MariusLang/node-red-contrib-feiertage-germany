@@ -6,8 +6,8 @@ module.exports = function(RED) {
 
         var checkNewYear = config.neujahr; // checkbox New Year
         var newYearName = config.neujahrName; // New Year Name
-        var checkHolyThreeKings = config.heiligeDreiKoenige; // checkboy Holy Three Kings
-        var holyThreeKingsName = config.heiligeDreiKoenigeName; // Holy Three Kings Name
+        var checkEpiphany = config.heiligeDreiKoenige; // checkboy Epiphany
+        var epiphanyName = config.heiligeDreiKoenigeName; // Epiphany Name
         var checkWeiberfastnacht = config.weiberfastnacht; // checkbox Weiberfastnacht
         var weiberfastnachtName = config.weiberfastnachtName; // Weiberfastnacht Name
         var checkValentinstag = config.valentinstag; // checkbox Valentinstag
@@ -133,11 +133,11 @@ module.exports = function(RED) {
         newYear[1] = newYearName; // name
         newYear[2] = getNeujahr(formatDateObj, currentYear);
         newYear[3] = getNeujahr(formatDE, currentYear);
-        var holyThreeKings = []; // day of Holy Three Kings
-        holyThreeKings[0] = "Holy Three Kings"; // id
-        holyThreeKings[1] = holyThreeKingsName; // name
-        holyThreeKings[2] = getHeiligeDreiKoenige(formatDateObj, currentYear);
-        holyThreeKings[3] = getHeiligeDreiKoenige(formatDE, currentYear);
+        var epiphany = []; // day of Holy Three Kings
+        epiphany[0] = "Epiphany"; // id
+        epiphany[1] = epiphanyName; // name
+        epiphany[2] = getHeiligeDreiKoenige(formatDateObj, currentYear);
+        epiphany[3] = getHeiligeDreiKoenige(formatDE, currentYear);
         var weiberfastnacht = []; // day of Weiberfastnacht
         weiberfastnacht[0] = "Weiberfastnacht"; // id
         weiberfastnacht[1] = weiberfastnachtName; // name
@@ -825,9 +825,9 @@ module.exports = function(RED) {
                 newYear[2] = getNeujahr(formatDateObj, currentYear + 1);
                 newYear[3] = getNeujahr(formatDE, currentYear + 1);
             }
-            if ((new Date(holyThreeKings[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                holyThreeKings[2] = getHeiligeDreiKoenige(formatDateObj, currentYear + 1);
-                holyThreeKings[3] = getHeiligeDreiKoenige(formatDE, currentYear + 1);
+            if ((new Date(epiphany[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
+                epiphany[2] = getHeiligeDreiKoenige(formatDateObj, currentYear + 1);
+                epiphany[3] = getHeiligeDreiKoenige(formatDE, currentYear + 1);
             }
             
             if ((new Date(weiberfastnacht[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
@@ -1012,11 +1012,11 @@ module.exports = function(RED) {
                     holiday.splice(index); // remove item at index
                 }
             }
-            // check Holy Three Kings is activated
-            if (checkHolyThreeKings) {
-                holiday.push(holyThreeKings); // add Holy Three Kings to holiday array
+            // check Epiphany is activated
+            if (checkEpiphany) {
+                holiday.push(epiphany); // add Epiphany to holiday array
             } else {
-                var index = holiday.indexOf(holyThreeKings); // get index of item
+                var index = holiday.indexOf(epiphany); // get index of item
                 if (index >= 0) {
                     holiday.splice(index); // remove item at index
                 }
