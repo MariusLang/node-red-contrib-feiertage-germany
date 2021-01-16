@@ -11,7 +11,7 @@ The Node Red **Feiertage Germany** node is the ultimative node to get informatio
 
 Is there any holiday missing? Write an issue! I'm going to add this holiday for you.
 
-This node was splitted out of the [node-red-contrib-feiertage node](https://github.com/MariusLang/node-red-contrib-feiertage). This Node only contains **German** holidays.
+This node was splitted out of the [node-red-contrib-feiertage](https://github.com/MariusLang/node-red-contrib-feiertage) node. This Node only contains **German** holidays.
 To get this node for an other country read the point below.
 
 ## You're living in Germany, Austria or Switzerland?
