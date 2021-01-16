@@ -4,10 +4,18 @@ module.exports = function(RED) {
         var context = this.context();
         var node = this;
 
+        // include getfeiertage npm package
+        var Feiertage;
+        try {
+            Feiertage = require('getfeiertage.js').Feiertage;
+        } catch (error) {
+            node.send({payload: error});
+        }
+
         var checkNewYear = config.neujahr; // checkbox New Year
         var newYearName = config.neujahrName; // New Year Name
-        var checkHolyThreeKings = config.heiligeDreiKoenige; // checkboy Holy Three Kings
-        var holyThreeKingsName = config.heiligeDreiKoenigeName; // Holy Three Kings Name
+        var checkEpiphany = config.heiligeDreiKoenige; // checkboy Epiphany
+        var epiphanyName = config.heiligeDreiKoenigeName; // Epiphany Name
         var checkWeiberfastnacht = config.weiberfastnacht; // checkbox Weiberfastnacht
         var weiberfastnachtName = config.weiberfastnachtName; // Weiberfastnacht Name
         var checkValentinstag = config.valentinstag; // checkbox Valentinstag
@@ -131,158 +139,158 @@ module.exports = function(RED) {
         var newYear = []; // day of New Year
         newYear[0] = "New Year"; // id
         newYear[1] = newYearName; // name
-        newYear[2] = getNeujahr(formatDateObj, currentYear);
-        newYear[3] = getNeujahr(formatDE, currentYear);
-        var holyThreeKings = []; // day of Holy Three Kings
-        holyThreeKings[0] = "Holy Three Kings"; // id
-        holyThreeKings[1] = holyThreeKingsName; // name
-        holyThreeKings[2] = getHeiligeDreiKoenige(formatDateObj, currentYear);
-        holyThreeKings[3] = getHeiligeDreiKoenige(formatDE, currentYear);
+        newYear[2] = Feiertage.getNeujahr(Feiertage.formatDateObj, currentYear);
+        newYear[3] = Feiertage.getNeujahr(Feiertage.formatDE, currentYear);
+        var epiphany = []; // day of Holy Three Kings
+        epiphany[0] = "Epiphany"; // id
+        epiphany[1] = epiphanyName; // name
+        epiphany[2] = Feiertage.getHeiligeDreiKoenige(Feiertage.formatDateObj, currentYear);
+        epiphany[3] = Feiertage.getHeiligeDreiKoenige(Feiertage.formatDE, currentYear);
         var weiberfastnacht = []; // day of Weiberfastnacht
         weiberfastnacht[0] = "Weiberfastnacht"; // id
         weiberfastnacht[1] = weiberfastnachtName; // name
-        weiberfastnacht[2] = getWeiberfastnacht(formatDateObj, currentYear);
-        weiberfastnacht[3] = getWeiberfastnacht(formatDE, currentYear);
+        weiberfastnacht[2] = Feiertage.getWeiberfastnacht(Feiertage.formatDateObj, currentYear);
+        weiberfastnacht[3] = Feiertage.getWeiberfastnacht(Feiertage.formatDE, currentYear);
         var valentinstag = []; // day of Valentinstag
         valentinstag[0] = "Valentinstag"; // id
         valentinstag[1] = valentinstagName; // name
-        valentinstag[2] = getValentinstag(formatDateObj, currentYear);
-        valentinstag[3] = getValentinstag(formatDE, currentYear);
+        valentinstag[2] = Feiertage.getValentinstag(Feiertage.formatDateObj, currentYear);
+        valentinstag[3] = Feiertage.getValentinstag(Feiertage.formatDE, currentYear);
         var rosenmontag = []; // day of Rosenmontag
         rosenmontag[0] = "Rosenmontag"; // id
         rosenmontag[1] = rosenmontagName; // name
-        rosenmontag[2] = getRosenmontag(formatDateObj, currentYear);
-        rosenmontag[3] = getRosenmontag(formatDE, currentYear);
+        rosenmontag[2] = Feiertage.getRosenmontag(Feiertage.formatDateObj, currentYear);
+        rosenmontag[3] = Feiertage.getRosenmontag(Feiertage.formatDE, currentYear);
         var fastnachtsdienstag = []; // day of Fastnachtsdienstag
         fastnachtsdienstag[0] = "Fastnachtdienstag"; // id
         fastnachtsdienstag[1] = fastnachtsdienstagsName; // name
-        fastnachtsdienstag[2] = getFastnachtsdienstag(formatDateObj, currentYear);
-        fastnachtsdienstag[3] = getFastnachtsdienstag(formatDE, currentYear);
+        fastnachtsdienstag[2] = Feiertage.getFastnachtsdienstag(Feiertage.formatDateObj, currentYear);
+        fastnachtsdienstag[3] = Feiertage.getFastnachtsdienstag(Feiertage.formatDE, currentYear);
         var aschermittwoch = []; // day of Aschermittwoch
         aschermittwoch[0] = "Aschermittwoch"; // id
         aschermittwoch[1] = aschermittwochName; // name
-        aschermittwoch[2] = getAschermittwoch(formatDateObj, currentYear);
-        aschermittwoch[3] = getAschermittwoch(formatDE, currentYear);
+        aschermittwoch[2] = Feiertage.getAschermittwoch(Feiertage.formatDateObj, currentYear);
+        aschermittwoch[3] = Feiertage.getAschermittwoch(Feiertage.formatDE, currentYear);
         var gruendonnerstag = []; // day of Gründonnerstag
         gruendonnerstag[0] = "Gründonnerstag"; // id
         gruendonnerstag[1] = gruendonnerstagName; // name
-        gruendonnerstag[2] = getGruendonnerstag(formatDateObj, currentYear);
-        gruendonnerstag[3] = getGruendonnerstag(formatDE, currentYear);
+        gruendonnerstag[2] = Feiertage.getGruendonnerstag(Feiertage.formatDateObj, currentYear);
+        gruendonnerstag[3] = Feiertage.getGruendonnerstag(Feiertage.formatDE, currentYear);
         var karfreitag = []; // day of Karfreitag
         karfreitag[0] = "Karfreitag"; // id
         karfreitag[1] = karfreitagName; // name
-        karfreitag[2] = getKarfreitag(formatDateObj, currentYear);
-        karfreitag[3] = getKarfreitag(formatDE, currentYear);
+        karfreitag[2] = Feiertage.getKarfreitag(Feiertage.formatDateObj, currentYear);
+        karfreitag[3] = Feiertage.getKarfreitag(Feiertage.formatDE, currentYear);
         var easterSunday = []; // day of Easter Sunday
         easterSunday[0] = "Easter Sunday"; // id
         easterSunday[1] = easterSundayName; // name
-        easterSunday[2] = getOstersonntag(formatDateObj, currentYear);
-        easterSunday[3] = getOstersonntag(formatDE, currentYear);
+        easterSunday[2] = Feiertage.getOstersonntag(Feiertage.formatDateObj, currentYear);
+        easterSunday[3] = Feiertage.getOstersonntag(Feiertage.formatDE, currentYear);
         var easterMonday = []; // day of easter Sunday
         easterMonday[0] = "Easter Monday"; // id
         easterMonday[1] = easterMondayName; // name
-        easterMonday[2] = getOstermontag(formatDateObj, currentYear);
-        easterMonday[3] = getOstermontag(formatDE, currentYear);
+        easterMonday[2] = Feiertage.getOstermontag(Feiertage.formatDateObj, currentYear);
+        easterMonday[3] = Feiertage.getOstermontag(Feiertage.formatDE, currentYear);
         var firstMay = []; // day of First May
         firstMay[0] = "First May"; // id
         firstMay[1] = firstMayName; // name
-        firstMay[2] = getFirstMay(formatDateObj, currentYear);
-        firstMay[3] = getFirstMay(formatDE, currentYear);
+        firstMay[2] = Feiertage.getFirstMay(Feiertage.formatDateObj, currentYear);
+        firstMay[3] = Feiertage.getFirstMay(Feiertage.formatDE, currentYear);
         var christiHimmelfahrt = []; // day of Christi Himmelfahrt
         christiHimmelfahrt[0] = "Christi Himmelfahrt"; // id
         christiHimmelfahrt[1] = christiHimmerlfahrtName; // name
-        christiHimmelfahrt[2] = getChristiHimmelfahrt(formatDateObj, currentYear);
-        christiHimmelfahrt[3] = getChristiHimmelfahrt(formatDE, currentYear);
+        christiHimmelfahrt[2] = Feiertage.getChristiHimmelfahrt(Feiertage.formatDateObj, currentYear);
+        christiHimmelfahrt[3] = Feiertage.getChristiHimmelfahrt(Feiertage.formatDE, currentYear);
         var pfingstsonntag = []; // day of Pfingstsonntag
         pfingstsonntag[0] = "Pfingstsonntag"; // id
         pfingstsonntag[1] = pfingstsonntagName; // name
-        pfingstsonntag[2] = getPfingstsonntag(formatDateObj, currentYear);
-        pfingstsonntag[3] = getPfingstsonntag(formatDE, currentYear);
+        pfingstsonntag[2] = Feiertage.getPfingstsonntag(Feiertage.formatDateObj, currentYear);
+        pfingstsonntag[3] = Feiertage.getPfingstsonntag(Feiertage.formatDE, currentYear);
         var pfingstmontag = []; // day of Pfingstmontag
         pfingstmontag[0] = "Pfingstmontag"; // id
         pfingstmontag[1] = pfingstmontagName; // name
-        pfingstmontag[2] = getPfingstmontag(formatDateObj, currentYear);
-        pfingstmontag[3] = getPfingstmontag(formatDE, currentYear);
+        pfingstmontag[2] = Feiertage.getPfingstmontag(Feiertage.formatDateObj, currentYear);
+        pfingstmontag[3] = Feiertage.getPfingstmontag(Feiertage.formatDE, currentYear);
         var fronleichnam = []; // day of Fronleichnam
         fronleichnam[0] = "Fronleichnam"; // id
         fronleichnam[1] = fronleichnamName; // name
-        fronleichnam[2] = getFronleichnam(formatDateObj, currentYear);
-        fronleichnam[3] = getFronleichnam(formatDE, currentYear);
+        fronleichnam[2] = Feiertage.getFronleichnam(Feiertage.formatDateObj, currentYear);
+        fronleichnam[3] = Feiertage.getFronleichnam(Feiertage.formatDE, currentYear);
         var mariaHimmelfahrt = []; // day of Maria Himmelfahrt
         mariaHimmelfahrt[0] = "Maria Himmelfahrt"; // id
         mariaHimmelfahrt[1] = mariaHimmelfahrtName; // name
-        mariaHimmelfahrt[2] = getMariaHimmelfahrt(formatDateObj, currentYear);
-        mariaHimmelfahrt[3] = getMariaHimmelfahrt(formatDE, currentYear);
+        mariaHimmelfahrt[2] = Feiertage.getMariaHimmelfahrt(Feiertage.formatDateObj, currentYear);
+        mariaHimmelfahrt[3] = Feiertage.getMariaHimmelfahrt(Feiertage.formatDE, currentYear);
         var tagDerDeutschenEinheit = []; // day of Tag der Deutschen Einheit
         tagDerDeutschenEinheit[0] = "Tag der Deutschen Einheit"; // id
         tagDerDeutschenEinheit[1] = tagDerDeutschenEinheitName; // name
-        tagDerDeutschenEinheit[2] = getTagDerDeutschenEinheit(formatDateObj, currentYear);
-        tagDerDeutschenEinheit[3] = getTagDerDeutschenEinheit(formatDE, currentYear);
+        tagDerDeutschenEinheit[2] = Feiertage.getTagDerDeutschenEinheit(Feiertage.formatDateObj, currentYear);
+        tagDerDeutschenEinheit[3] = Feiertage.getTagDerDeutschenEinheit(Feiertage.formatDE, currentYear);
         var halloween = []; // day of Halloween
         halloween[0] = "Halloween"; // id
         halloween[1] = halloweenName; // name
-        halloween[2] = getHalloween(formatDateObj, currentYear);
-        halloween[3] = getHalloween(formatDE, currentYear);
+        halloween[2] = Feiertage.getHalloween(Feiertage.formatDateObj, currentYear);
+        halloween[3] = Feiertage.getHalloween(Feiertage.formatDE, currentYear);
         var allerheiligen = []; // day of Allerheiligen
         allerheiligen[0] = "Allerheiligen"; // id
         allerheiligen[1] = allerheiligenName; // name
-        allerheiligen[2] = getAllerheiligen(formatDateObj, currentYear);
-        allerheiligen[3] = getAllerheiligen(formatDE, currentYear);
+        allerheiligen[2] = Feiertage.getAllerheiligen(Feiertage.formatDateObj, currentYear);
+        allerheiligen[3] = Feiertage.getAllerheiligen(Feiertage.formatDE, currentYear);
         var stMartin = []; // day of St. Martin
         stMartin[0] = "St. Martin"; // id
         stMartin[1] = stMartinName; // name
-        stMartin[2] = getStMartin(formatDateObj, currentYear);
-        stMartin[3] = getStMartin(formatDE, currentYear);
+        stMartin[2] = Feiertage.getStMartin(Feiertage.formatDateObj, currentYear);
+        stMartin[3] = Feiertage.getStMartin(Feiertage.formatDE, currentYear);
         var bussUndBettag = []; // day of Buß und Bettag
         bussUndBettag[0] = "Buß und Bettag"; // id
         bussUndBettag[1] = bussUndBettagName; // name
-        bussUndBettag[2] = getBussUndBettag(formatDateObj, currentYear);
-        bussUndBettag[3] = getBussUndBettag(formatDE, currentYear);
+        bussUndBettag[2] = Feiertage.getBussUndBettag(Feiertage.formatDateObj, currentYear);
+        bussUndBettag[3] = Feiertage.getBussUndBettag(Feiertage.formatDE, currentYear);
         var santa = []; // day of Nikolaus
         santa[0] = "Santa Day"; // id
         santa[1] = santaName; // name
-        santa[2] = getNikolaus(formatDateObj, currentYear);
-        santa[3] = getNikolaus(formatDE, currentYear);
+        santa[2] = Feiertage.getNikolaus(Feiertage.formatDateObj, currentYear);
+        santa[3] = Feiertage.getNikolaus(Feiertage.formatDE, currentYear);
         var advent1 = []; // day of first Advent
         advent1[0] = "1. Advent"; // id
         advent1[1] = advent1Name; // name
-        advent1[2] = getAdvent1(formatDateObj, currentYear);
-        advent1[3] = getAdvent1(formatDE, currentYear);
+        advent1[2] = Feiertage.getAdvent1(Feiertage.formatDateObj, currentYear);
+        advent1[3] = Feiertage.getAdvent1(Feiertage.formatDE, currentYear);
         var advent2 = []; // day of second Advent
         advent2[0] = "2. Advent"; // id
         advent2[1] = advent2Name; // name
-        advent2[2] = getAdvent2(formatDateObj, currentYear);
-        advent2[3] = getAdvent2(formatDE, currentYear);
+        advent2[2] = Feiertage.getAdvent2(Feiertage.formatDateObj, currentYear);
+        advent2[3] = Feiertage.getAdvent2(Feiertage.formatDE, currentYear);
         var advent3 = []; // day of third Advent
         advent3[0] = "3. Advent"; // id
         advent3[1] = advent3Name; // name
-        advent3[2] = getAdvent3(formatDateObj, currentYear);
-        advent3[3] = getAdvent3(formatDE, currentYear);
+        advent3[2] = Feiertage.getAdvent3(Feiertage.formatDateObj, currentYear);
+        advent3[3] = Feiertage.getAdvent3(Feiertage.formatDE, currentYear);
         var advent4 = []; // day of fourth Advent
         advent4[0] = "4. Advent"; // id
         advent4[1] = advent4Name; // name
-        advent4[2] = getAdvent4(formatDateObj, 24, currentYear);
-        advent4[3] = getAdvent4(formatDE, 24, currentYear);
+        advent4[2] = Feiertage.getAdvent4(Feiertage.formatDateObj, currentYear);
+        advent4[3] = Feiertage.getAdvent4(Feiertage.formatDE, currentYear);
         var christmasEve = []; // day of Christmas Eve
         christmasEve[0] = "Christmas Eve"; // id
         christmasEve[1] = christmasEveName; // name
-        christmasEve[2] = getHeiligabend(formatDateObj, currentYear);
-        christmasEve[3] = getHeiligabend(formatDE, currentYear);
+        christmasEve[2] = Feiertage.getHeiligabend(Feiertage.formatDateObj, currentYear);
+        christmasEve[3] = Feiertage.getHeiligabend(Feiertage.formatDE, currentYear);
         var firstDayChristmas = []; // day of First day of Christmas
         firstDayChristmas[0] = "First day of Christmas"; // id
         firstDayChristmas[1] = firstDayChristmasName; // name
-        firstDayChristmas[2] = getWeihnachtsfeiertag1(formatDateObj, currentYear);
-        firstDayChristmas[3] = getWeihnachtsfeiertag1(formatDE, currentYear);
+        firstDayChristmas[2] = Feiertage.getWeihnachtsfeiertag1(Feiertage.formatDateObj, currentYear);
+        firstDayChristmas[3] = Feiertage.getWeihnachtsfeiertag1(Feiertage.formatDE, currentYear);
         var secondDayChristmas = []; // day of Second day of Christmas
         secondDayChristmas[0] = "Second day of Christmas"; // id
         secondDayChristmas[1] = secondDayChristmasName; // name
-        secondDayChristmas[2] = getWeihnachtsfeiertag2(formatDateObj, currentYear);
-        secondDayChristmas[3] = getWeihnachtsfeiertag2(formatDE, currentYear);
+        secondDayChristmas[2] = Feiertage.getWeihnachtsfeiertag2(Feiertage.formatDateObj, currentYear);
+        secondDayChristmas[3] = Feiertage.getWeihnachtsfeiertag2(Feiertage.formatDE, currentYear);
         var newYearsEve = []; // day of New Years Eve
         newYearsEve[0] = "New Years Eve"; // id
         newYearsEve[1] = newYearsEveName; // name
-        newYearsEve[2] = getSilvester(formatDateObj, currentYear);
-        newYearsEve[3] = getSilvester(formatDE, currentYear);
+        newYearsEve[2] = Feiertage.getSilvester(Feiertage.formatDateObj, currentYear);
+        newYearsEve[3] = Feiertage.getSilvester(Feiertage.formatDE, currentYear);
 
         var ownHoliday1 = []; // day of Own Holiday 1
         ownHoliday1[0] = nameOwnHoliday1;
@@ -354,6 +362,9 @@ module.exports = function(RED) {
                 case "nextThreeHolidays":
                     sendNextThreeHolidays(); // outputs next 3 holidays
                     break;
+                case "isChristmasTime":
+                    isChristmasTime(); // outputs wether today is Christmas time
+                    break;
             }
         });
 
@@ -365,323 +376,6 @@ module.exports = function(RED) {
                 isTodayHoliday(); // outputs boolean wether today is holiday
             }
         }, 60000);
-
-        function getNeujahr(format, year) {
-            if (format == formatDE) {
-                return "1.1." + year;
-            } else {
-                return year + "-1-1";
-            }
-        }
-
-        function getHeiligeDreiKoenige(format, year) {
-            if (format == formatDE) {
-                return "6.1." + year;
-            } else {
-                return year + "-1-6";
-            }
-        }
-
-        function getWeiberfastnacht(format, year) {
-            var refereceDate = new Date(getOstersonntag(formatDateObj, year));
-            refereceDate.setDate(refereceDate.getDate() - 52); // Weiberfastnacht = eastersunday - 52 days
-
-            if (format == formatDE) {
-                return refereceDate.getDate() + "." + (refereceDate.getMonth() + 1) + "." + year;
-            } else {
-                return year + "-" + (refereceDate.getMonth() + 1) + "-" + refereceDate.getDate();
-            }
-        }
-
-        function getValentinstag(format, year) {
-            if (format == formatDE) {
-                return "14.2." + year;
-            } else {
-                return year + "-2-14";
-            }
-        }
-
-        function getRosenmontag(format, year) {
-            var refereceDate = new Date(getOstersonntag(formatDateObj, year));
-            refereceDate.setDate(refereceDate.getDate() - 48); // Rosenmontag = eastersunday - 48
-
-            if (format == formatDE) {
-                return refereceDate.getDate() + "." + (refereceDate.getMonth() + 1) + "." + year;
-            } else {
-                return year + "-" + (refereceDate.getMonth() + 1) + "-" + refereceDate.getDate();
-            }
-        }
-
-        function getFastnachtsdienstag(format, year) {
-            var refereceDate = new Date(getOstersonntag(formatDateObj, year));
-            refereceDate.setDate(refereceDate.getDate() - 47); // Fastnachtsdienstag = eastersunday - 47
-            
-            if (format == formatDE) {
-                return refereceDate.getDate() + "." + (refereceDate.getMonth() + 1) + "." + year;
-            } else {
-                return year + "-" + (refereceDate.getMonth() + 1) + "-" + refereceDate.getDate();
-            }
-        }
-
-        function getAschermittwoch(format, year) {
-            var refereceDate = new Date(getOstersonntag(formatDateObj, year));
-            refereceDate.setDate(refereceDate.getDate() - 46); // Aschermittwoch = eastersunday - 46
-            
-            if (format == formatDE) {
-                return refereceDate.getDate() + "." + (refereceDate.getMonth() + 1) + "." + year;
-            } else {
-                return year + "-" + (refereceDate.getMonth() + 1) + "-" + refereceDate.getDate();
-            }
-        }
-
-        function getGruendonnerstag(format, year) {
-            var refereceDate = new Date(getOstersonntag(formatDateObj, year));
-            refereceDate.setDate(refereceDate.getDate() - 3); // Gründonnerstag = eastersunday - 3
-            
-            if (format == formatDE) {
-                return refereceDate.getDate() + "." + (refereceDate.getMonth() + 1) + "." + year;
-            } else {
-                return year + "-" + (refereceDate.getMonth() + 1) + "-" + refereceDate.getDate();
-            }
-        }
-
-        function getKarfreitag(format, year) {
-            var refereceDate = new Date(getOstersonntag(formatDateObj, year));
-            refereceDate.setDate(refereceDate.getDate() - 2); // Karfreitag = eastersunday - 2
-
-            if (format == formatDE) {
-                return refereceDate.getDate() + "." + (refereceDate.getMonth() + 1) + "." + year;
-            } else {
-                return year + "-" + (refereceDate.getMonth() + 1) + "-" + refereceDate.getDate();
-            }
-        }
-
-        function getOstersonntag(format, year) {
-            var a = year % 19; // currentYear mod 19
-            var b = (19 * a + 24) % 30;
-            var easterSundayDay = b + (2 * (year % 4) + 4 * (year % 7) + 6 * b + 5) % 7;
-            
-            if (easterSundayDay == 35 || (easterSundayDay == 34 && b == 28 && a > 10)) {
-                easterSundayDay -= 7;
-            }
-            // generate easterDate and change Parameters to easter Date
-            var easterDate = new Date(year, 2, 22);
-            easterDate.setTime(easterDate.getTime() + 86400000 * easterSundayDay);
-            var easterMonth = easterDate.getMonth() + 1;
-            var easterDay = easterDate.getDate();
-            
-            if (format == formatDE) {
-                return easterDay + "." + easterMonth + "." + year;
-            } else {
-                return year + "-" + easterMonth + "-" + easterDay;
-            }
-        }
-
-        function getOstermontag(format, year) {
-            var refereceDate = new Date(getOstersonntag(formatDateObj, year));
-            refereceDate.setDate(refereceDate.getDate() + 1); // eastermonday = eastersunday + 1
-            
-            if (format == formatDE) {
-                return refereceDate.getDate() + "." + (refereceDate.getMonth() + 1) + "." + year;
-            } else {
-                return year + "-" + (refereceDate.getMonth() + 1) + "-" + refereceDate.getDate();
-            }
-        }
-
-        function getFirstMay(format, year) {
-            if (format == formatDE) {
-                return "1.5." + year;
-            } else {
-                return year + "-5-1";
-            }
-        }
-
-        function getChristiHimmelfahrt(format, year) {
-            var refereceDate = new Date(getOstersonntag(formatDateObj, year));
-            refereceDate.setDate(refereceDate.getDate() + 39); // Christi Himmelfahrt = eastersunday + 39
-            
-            if (format == formatDE) {
-                return refereceDate.getDate() + "." + (refereceDate.getMonth() + 1) + "." + year;
-            } else {
-                return year + "-" + (refereceDate.getMonth() + 1) + "-" + refereceDate.getDate();
-            }
-        }
-
-        function getPfingstsonntag(format, year) {
-            var refereceDate = new Date(getOstersonntag(formatDateObj, year));
-            refereceDate.setDate(refereceDate.getDate() + 49); // Pfingstsonntag = eastersunday + 49
-            
-            if (format == formatDE) {
-                return refereceDate.getDate() + "." + (refereceDate.getMonth() + 1) + "." + year;
-            } else {
-                return year + "-" + (refereceDate.getMonth() + 1) + "-" + refereceDate.getDate();
-            }
-        }
-
-        function getPfingstmontag(format, year) {
-            var refereceDate = new Date(getOstersonntag(formatDateObj, year));
-            refereceDate.setDate(refereceDate.getDate() + 50); // Pfingstmontag = eastersunday + 50
-            
-            if (format == formatDE) {
-                return refereceDate.getDate() + "." + (refereceDate.getMonth() + 1) + "." + year;
-            } else {
-                return year + "-" + (refereceDate.getMonth() + 1) + "-" + refereceDate.getDate();
-            }
-        }
-
-        function getFronleichnam(format, year) {
-            var refereceDate = new Date(getOstersonntag(formatDateObj, year));
-            refereceDate.setDate(refereceDate.getDate() + 60); // Fronleichnam = eastersunday + 60
-            
-            if (format == formatDE) {
-                return refereceDate.getDate() + "." + (refereceDate.getMonth() + 1) + "." + year;
-            } else {
-                return year + "-" + (refereceDate.getMonth() + 1) + "-" + refereceDate.getDate();
-            }
-        }
-
-        function getMariaHimmelfahrt(format, year) {
-            if (format == formatDE) {
-                return "15.8." + year;
-            } else {
-                return year + "-8-15";
-            }
-        }
-
-        function getTagDerDeutschenEinheit(format, year) {
-            if (format == formatDE) {
-                return "3.10." + year;
-            } else {
-                return year + "-10-3";
-            }
-        }
-
-        function getHalloween(format, year) {
-            if (format == formatDE) {
-                return "31.10." + year;
-            } else {
-                return year + "-10-31";
-            }
-        }
-
-        function getAllerheiligen(format, year) {
-            if (format == formatDE) {
-                return "1.11." + year;
-            } else {
-                return year + "-11-1";
-            }
-        }
-
-        function getStMartin(format, year) {
-            if (format == formatDE) {
-                return "11.11." + year;
-            } else {
-                return year + "-11-11";
-            }
-        }
-
-        function getBussUndBettag(format, year) {
-            var refereceDate = new Date(getAdvent4(formatDateObj, 24, year));
-            refereceDate.setDate(refereceDate.getDate() - 32); // Buß und Bettag = 4. Advent - 32
-            
-            if (format == formatDE) {
-                return refereceDate.getDate() + "." + (refereceDate.getMonth() + 1) + "." + year;
-            } else {
-                return year + "-" + (refereceDate.getMonth() + 1) + "-" + refereceDate.getDate();
-            }
-        }
-
-        function getNikolaus(format, year) {
-            if (format == formatDE) {
-                return "6.12." + year;
-            } else {
-                return year + "-12-6";
-            }
-        }
-
-        function getAdvent1(format, year) {
-            var refereceDate = new Date(getAdvent4(formatDateObj, 24, year));
-            refereceDate.setDate(refereceDate.getDate() - 21); // 1. Advent = 4. Advent - 21
-            
-            if (format == formatDE) {
-                return refereceDate.getDate() + "." + (refereceDate.getMonth() + 1) + "." + year;
-            } else {
-                return year + "-" + (refereceDate.getMonth() + 1) + "-" + refereceDate.getDate();
-            }
-        }
-
-        function getAdvent2(format, year) {
-            var refereceDate = new Date(getAdvent4(formatDateObj, 24, year));
-            refereceDate.setDate(refereceDate.getDate() - 14); // 2. Advent = 4. Advent - 14
-            
-            if (format == formatDE) {
-                return refereceDate.getDate() + "." + (refereceDate.getMonth() + 1) + "." + year;
-            } else {
-                return year + "-" + (refereceDate.getMonth() + 1) + "-" + refereceDate.getDate();
-            }
-        }
-
-        function getAdvent3(format, year) {
-            var refereceDate = new Date(getAdvent4(formatDateObj, 24, year));
-            refereceDate.setDate(refereceDate.getDate() - 7); // 3. Advent = 4. Advent - 7
-            
-            if (format == formatDE) {
-                return refereceDate.getDate() + "." + (refereceDate.getMonth() + 1) + "." + year;
-            } else {
-                return year + "-" + (refereceDate.getMonth() + 1) + "-" + refereceDate.getDate();
-            }
-        }
-
-        function getAdvent4(format, day, year) {
-            // calculates days of advent
-            var checkDate = new Date(year + "-12-" + day); // generate object of specific day
-            var checkMonth = checkDate.getMonth() + 1; // month (should be 12)
-            var checkWeekday = checkDate.getDay(); // weekday
-
-            // check generated weekday is 0 and generated month is 12
-            if (checkWeekday === 0 && checkMonth == 12) {
-                if (format == formatDE) {
-                    return day + "." + checkMonth + "." + year;
-                } else {
-                    return year + "-" + checkMonth + "-" + day;
-                }
-            }
-            else {
-                return getAdvent4(format, day - 1, year);
-            }
-        }
-
-        function getHeiligabend(format, year) {
-            if (format == formatDE) {
-                return "24.12." + year;
-            } else {
-                return year + "-12-24";
-            }
-        }
-
-        function getWeihnachtsfeiertag1(format, year) {
-            if (format == formatDE) {
-                return "25.12." + year;
-            } else {
-                return year + "-12-25";
-            }
-        }
-
-        function getWeihnachtsfeiertag2(format, year) {
-            if (format == formatDE) {
-                return "26.12." + year;
-            } else {
-                return year + "-12-26";
-            }
-        }
-
-        function getSilvester(format, year) {
-            if (format == formatDE) {
-                return "31.12." + year;
-            } else {
-                return year + "-12-31";
-            }
-        }
 
         function getOwnHoliday1(format, year) {
             if (format == formatDE) {
@@ -819,132 +513,143 @@ module.exports = function(RED) {
             node.send({payload: holiday[holiday.length - 3]}); // send before penultimate item of holiday array
         }
 
+        function isChristmasTime() {
+            if (new Date(Feiertage.getAdvent1(Feiertage.formatDateObj, currentYear)).valueOf() <= new Date().valueOf() &&
+                new Date(Feiertage.getSilvester(Feiertage.formatDateObj, currentYear)).valueOf() >= new Date().valueOf() ||
+                new Date(Feiertage.getNeujahr(Feiertage.formatDateObj, currentYear)).valueOf() <= new Date().valueOf() &&
+                new Date(Feiertage.getHeiligeDreiKoenige(Feiertage.formatDateObj, currentYear)).valueOf() >= new Date().valueOf()) {
+                node.send({payload: true});
+            } else {
+                node.send({payload: false});
+            }
+        }
+
         function refreshHoliday() {
             // if holiday is already over create new date (next year)
             if ((new Date(newYear[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                newYear[2] = getNeujahr(formatDateObj, currentYear + 1);
-                newYear[3] = getNeujahr(formatDE, currentYear + 1);
+                newYear[2] = Feiertage.getNeujahr(Feiertage.formatDateObj, currentYear + 1);
+                newYear[3] = Feiertage.getNeujahr(Feiertage.formatDE, currentYear + 1);
             }
-            if ((new Date(holyThreeKings[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                holyThreeKings[2] = getHeiligeDreiKoenige(formatDateObj, currentYear + 1);
-                holyThreeKings[3] = getHeiligeDreiKoenige(formatDE, currentYear + 1);
+            if ((new Date(epiphany[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
+                epiphany[2] = Feiertage.getHeiligeDreiKoenige(Feiertage.formatDateObj, currentYear + 1);
+                epiphany[3] = Feiertage.getHeiligeDreiKoenige(Feiertage.formatDE, currentYear + 1);
             }
             
             if ((new Date(weiberfastnacht[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                weiberfastnacht[2] = getWeiberfastnacht(formatDateObj, currentYear + 1);
-                weiberfastnacht[3] = getWeiberfastnacht(formatDE, currentYear + 1);
+                weiberfastnacht[2] = Feiertage.getWeiberfastnacht(Feiertage.formatDateObj, currentYear + 1);
+                weiberfastnacht[3] = Feiertage.getWeiberfastnacht(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(valentinstag[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                valentinstag[2] = getValentinstag(formatDateObj, currentYear + 1);
-                valentinstag[3] = getValentinstag(formatDE, currentYear + 1);
+                valentinstag[2] = Feiertage.getValentinstag(Feiertage.formatDateObj, currentYear + 1);
+                valentinstag[3] = Feiertage.getValentinstag(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(rosenmontag[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                rosenmontag[2] = getRosenmontag(formatDateObj, currentYear + 1);
-                rosenmontag[3] = getRosenmontag(formatDE, currentYear + 1);
+                rosenmontag[2] = Feiertage.getRosenmontag(Feiertage.formatDateObj, currentYear + 1);
+                rosenmontag[3] = Feiertage.getRosenmontag(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(fastnachtsdienstag[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                fastnachtsdienstag[2] = getFastnachtsdienstag(formatDateObj, currentYear + 1);
-                fastnachtsdienstag[3] = getFastnachtsdienstag(formatDE, currentYear + 1);
+                fastnachtsdienstag[2] = Feiertage.getFastnachtsdienstag(Feiertage.formatDateObj, currentYear + 1);
+                fastnachtsdienstag[3] = Feiertage.getFastnachtsdienstag(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(aschermittwoch[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                aschermittwoch[2] = getAschermittwoch(formatDateObj, currentYear + 1);
-                aschermittwoch[3] = getAschermittwoch(formatDE, currentYear + 1);
+                aschermittwoch[2] = Feiertage.getAschermittwoch(Feiertage.formatDateObj, currentYear + 1);
+                aschermittwoch[3] = Feiertage.getAschermittwoch(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(gruendonnerstag[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                gruendonnerstag[2] = getGruendonnerstag(formatDateObj, currentYear + 1);
-                gruendonnerstag[3] = getGruendonnerstag(formatDE, currentYear + 1);
+                gruendonnerstag[2] = Feiertage.getGruendonnerstag(Feiertage.formatDateObj, currentYear + 1);
+                gruendonnerstag[3] = Feiertage.getGruendonnerstag(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(karfreitag[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                karfreitag[2] = getKarfreitag(formatDateObj, currentYear + 1);
-                karfreitag[3] = getKarfreitag(formatDE, currentYear + 1);
+                karfreitag[2] = Feiertage.getKarfreitag(Feiertage.formatDateObj, currentYear + 1);
+                karfreitag[3] = Feiertage.getKarfreitag(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(easterSunday[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                easterSunday[2] = getOstersonntag(formatDateObj, currentYear + 1);
-                easterSunday[3] = getOstersonntag(formatDE, currentYear + 1);
+                easterSunday[2] = Feiertage.getOstersonntag(Feiertage.formatDateObj, currentYear + 1);
+                easterSunday[3] = Feiertage.getOstersonntag(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(easterMonday[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                easterMonday[2] = getOstermontag(formatDateObj, currentYear + 1);
-                easterMonday[3] = getOstermontag(formatDE, currentYear + 1);
+                easterMonday[2] = Feiertage.getOstermontag(Feiertage.formatDateObj, currentYear + 1);
+                easterMonday[3] = Feiertage.getOstermontag(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(firstMay[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                firstMay[2] = getFirstMay(formatDateObj, currentYear + 1);
-                firstMay[3] = getFirstMay(formatDE, currentYear + 1);
+                firstMay[2] = Feiertage.getFirstMay(Feiertage.formatDateObj, currentYear + 1);
+                firstMay[3] = Feiertage.getFirstMay(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(christiHimmelfahrt[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                christiHimmelfahrt[2] = getChristiHimmelfahrt(formatDateObj, currentYear + 1);
-                christiHimmelfahrt[3] = getChristiHimmelfahrt(formatDE, currentYear + 1);
+                christiHimmelfahrt[2] = Feiertage.getChristiHimmelfahrt(Feiertage.formatDateObj, currentYear + 1);
+                christiHimmelfahrt[3] = Feiertage.getChristiHimmelfahrt(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(pfingstsonntag[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                pfingstsonntag[2] = getPfingstsonntag(formatDateObj, currentYear + 1);
-                pfingstsonntag[3] = getPfingstsonntag(formatDE, currentYear + 1);
+                pfingstsonntag[2] = Feiertage.getPfingstsonntag(Feiertage.formatDateObj, currentYear + 1);
+                pfingstsonntag[3] = Feiertage.getPfingstsonntag(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(pfingstmontag[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                pfingstmontag[2] = getPfingstmontag(formatDateObj, currentYear + 1);
-                pfingstmontag[3] = getPfingstmontag(formatDE, currentYear + 1);
+                pfingstmontag[2] = Feiertage.getPfingstmontag(Feiertage.formatDateObj, currentYear + 1);
+                pfingstmontag[3] = Feiertage.getPfingstmontag(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(fronleichnam[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                fronleichnam[2] = getFronleichnam(formatDateObj, currentYear + 1);
-                fronleichnam[3] = getFronleichnam(formatDE, currentYear + 1);
+                fronleichnam[2] = Feiertage.getFronleichnam(Feiertage.formatDateObj, currentYear + 1);
+                fronleichnam[3] = Feiertage.getFronleichnam(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(mariaHimmelfahrt[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                mariaHimmelfahrt[2] = getMariaHimmelfahrt(formatDateObj, currentYear + 1);
-                mariaHimmelfahrt[3] = getMariaHimmelfahrt(formatDE, currentYear + 1);
+                mariaHimmelfahrt[2] = Feiertage.getMariaHimmelfahrt(Feiertage.formatDateObj, currentYear + 1);
+                mariaHimmelfahrt[3] = Feiertage.getMariaHimmelfahrt(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(tagDerDeutschenEinheit[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                tagDerDeutschenEinheit[2] = getTagDerDeutschenEinheit(formatDateObj, currentYear + 1);
-                tagDerDeutschenEinheit[3] = getTagDerDeutschenEinheit(formatDE, currentYear + 1);
+                tagDerDeutschenEinheit[2] = Feiertage.getTagDerDeutschenEinheit(Feiertage.formatDateObj, currentYear + 1);
+                tagDerDeutschenEinheit[3] = Feiertage.getTagDerDeutschenEinheit(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(halloween[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                halloween[2] = getHalloween(formatDateObj, currentYear + 1);
-                halloween[3] = getHalloween(formatDE, currentYear + 1);
+                halloween[2] = Feiertage.getHalloween(Feiertage.formatDateObj, currentYear + 1);
+                halloween[3] = Feiertage.getHalloween(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(allerheiligen[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                allerheiligen[2] = getAllerheiligen(formatDateObj, currentYear + 1);
-                allerheiligen[3] = getAllerheiligen(formatDE, currentYear + 1);
+                allerheiligen[2] = Feiertage.getAllerheiligen(Feiertage.formatDateObj, currentYear + 1);
+                allerheiligen[3] = Feiertage.getAllerheiligen(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(stMartin[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                stMartin[2] = getStMartin(formatDateObj, currentYear + 1);
-                stMartin[3] = getStMartin(formatDE, currentYear + 1);
+                stMartin[2] = Feiertage.getStMartin(Feiertage.formatDateObj, currentYear + 1);
+                stMartin[3] = Feiertage.getStMartin(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(bussUndBettag[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                bussUndBettag[2] = getBussUndBettag(formatDateObj, currentYear + 1);
-                bussUndBettag[3] = getBussUndBettag(formatDE, currentYear + 1);
+                bussUndBettag[2] = Feiertage.getBussUndBettag(Feiertage.formatDateObj, currentYear + 1);
+                bussUndBettag[3] = Feiertage.getBussUndBettag(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(santa[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                santa[2] = getNikolaus(formatDateObj, currentYear + 1);
-                santa[3] = getNikolaus(formatDE, currentYear + 1);
+                santa[2] = Feiertage.getNikolaus(Feiertage.formatDateObj, currentYear + 1);
+                santa[3] = Feiertage.getNikolaus(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(advent1[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                advent1[2] = getAdvent1(formatDateObj, currentYear + 1);
-                advent1[3] = getAdvent1(formatDE, currentYear + 1);
+                advent1[2] = Feiertage.getAdvent1(Feiertage.formatDateObj, currentYear + 1);
+                advent1[3] = Feiertage.getAdvent1(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(advent2[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                advent2[2] = getAdvent2(formatDateObj, currentYear + 1);
-                advent2[3] = getAdvent2(formatDE, currentYear + 1);
+                advent2[2] = Feiertage.getAdvent2(Feiertage.formatDateObj, currentYear + 1);
+                advent2[3] = Feiertage.getAdvent2(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(advent3[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                advent3[2] = getAdvent3(formatDateObj, currentYear + 1);
-                advent3[3] = getAdvent3(formatDE, currentYear + 1);
+                advent3[2] = Feiertage.getAdvent3(Feiertage.formatDateObj, currentYear + 1);
+                advent3[3] = Feiertage.getAdvent3(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(advent4[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                advent4[2] = getAdvent4(formatDateObj, 24, currentYear + 1);
-                advent4[3] = getAdvent4(formatDE, 24, currentYear + 1);
+                advent4[2] = Feiertage.getAdvent4(Feiertage.formatDateObj, currentYear + 1);
+                advent4[3] = Feiertage.getAdvent4(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(christmasEve[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                christmasEve[2] = getHeiligabend(formatDateObj, currentYear + 1);
-                christmasEve[3] = getHeiligabend(formatDE, currentYear + 1);
+                christmasEve[2] = Feiertage.getHeiligabend(Feiertage.formatDateObj, currentYear + 1);
+                christmasEve[3] = Feiertage.getHeiligabend(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(firstDayChristmas[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                firstDayChristmas[2] = getWeihnachtsfeiertag1(formatDateObj, currentYear + 1);
-                firstDayChristmas[3] = getWeihnachtsfeiertag1(formatDE, currentYear + 1);
+                firstDayChristmas[2] = Feiertage.getWeihnachtsfeiertag1(Feiertage.formatDateObj, currentYear + 1);
+                firstDayChristmas[3] = Feiertage.getWeihnachtsfeiertag1(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(secondDayChristmas[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                secondDayChristmas[2] = getWeihnachtsfeiertag2(formatDateObj, currentYear + 1);
-                secondDayChristmas[3] = getWeihnachtsfeiertag2(formatDE, currentYear + 1);
+                secondDayChristmas[2] = Feiertage.getWeihnachtsfeiertag2(Feiertage.formatDateObj, currentYear + 1);
+                secondDayChristmas[3] = Feiertage.getWeihnachtsfeiertag2(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(newYearsEve[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
-                newYearsEve[2] = getSilvester(formatDateObj, currentYear + 1);
-                newYearsEve[3] = getSilvester(formatDE, currentYear + 1);
+                newYearsEve[2] = Feiertage.getSilvester(Feiertage.formatDateObj, currentYear + 1);
+                newYearsEve[3] = Feiertage.getSilvester(Feiertage.formatDE, currentYear + 1);
             }
             if ((new Date(ownHoliday1[2]) - new Date(currentYear + "-" + currentMonth + "-" + currentDay)) < 0) {
                 ownHoliday1[2] = getOwnHoliday1(formatDateObj, currentYear + 1);
@@ -1012,11 +717,11 @@ module.exports = function(RED) {
                     holiday.splice(index); // remove item at index
                 }
             }
-            // check Holy Three Kings is activated
-            if (checkHolyThreeKings) {
-                holiday.push(holyThreeKings); // add Holy Three Kings to holiday array
+            // check Epiphany is activated
+            if (checkEpiphany) {
+                holiday.push(epiphany); // add Epiphany to holiday array
             } else {
-                var index = holiday.indexOf(holyThreeKings); // get index of item
+                var index = holiday.indexOf(epiphany); // get index of item
                 if (index >= 0) {
                     holiday.splice(index); // remove item at index
                 }

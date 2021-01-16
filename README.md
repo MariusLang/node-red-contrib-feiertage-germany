@@ -11,7 +11,7 @@ The Node Red **Feiertage Germany** node is the ultimative node to get informatio
 
 Is there any holiday missing? Write an issue! I'm going to add this holiday for you.
 
-This node was splitted out of the [node-red-contrib-feiertage node](https://github.com/MariusLang/node-red-contrib-feiertage). This Node only contains **German** holidays.
+This node was splitted out of the [node-red-contrib-feiertage](https://github.com/MariusLang/node-red-contrib-feiertage) node. This Node only contains **German** holidays.
 To get this node for an other country read the point below.
 
 ## You're living in Germany, Austria or Switzerland?
@@ -58,9 +58,10 @@ sudo reboot
 ### Input
 The input can be used to trigger special outputs. The keywords are listed below.
 
-keyoword | output
+msg.payload | output
 --- | ---
 isTodayHoliday | boolean wether today is holiday
+isChristmasTime | boolean wether today is Christmas time (1. Advent - Heilige drei Könige)
 nextHoliday | information about next holiday
 nextThreeHolidays | informations about next 3 holidays
 all | informations about all holidays
