@@ -123,6 +123,7 @@
         <span><input style="width: 20px;" type="checkbox" id="node-input-silvester" placeholder="Silvester"></span>
         <i class="fa fa-calendar"></i> <input style="width: 200px;" type="text" id="node-input-silvesterName" placeholder="Silvester">
     </div>
+    <button type="button" id="btnReset" class="rdg-ui-btn red-ui-button" onclick="resetNameDE()"><i class="fa fa-plus-square"></i>reset default</button>
 
     <hr>
 
@@ -793,4 +794,38 @@
             return this.name||"feiertageDE";
         },
     });
+
+    function resetNameDE() {
+        document.getElementById('node-input-neujahrName').value = "Neujahr";
+        document.getElementById('node-input-heiligeDreiKoenigeName').value = "Heilige drei Könige";
+        document.getElementById('node-input-weiberfastnachtName').value = "Weiberfastnacht";
+        document.getElementById('node-input-valentinstagName').value = "Valentinstag";
+        document.getElementById('node-input-rosenmontagName').value = "Rosenmontag";
+        document.getElementById('node-input-fastnachtsdienstagName').value = "Fastnachtsdienstag";
+        document.getElementById('node-input-aschermittwochName').value = "Aschermittwoch";
+        document.getElementById('node-input-gruendonnerstagName').value = "Gründonnerstag";
+        document.getElementById('node-input-karfreitagName').value = "Karfreitag";
+        document.getElementById('node-input-easterSundayName').value = "Ostersonntag";
+        document.getElementById('node-input-easterMondayName').value = "Ostermontag";
+        document.getElementById('node-input-firstMayName').value = "1. Mai";
+        document.getElementById('node-input-christiHimmelfahrtName').value = "Christi Himmelfahrt";
+        document.getElementById('node-input-pfingstsonntagName').value = "Pfingstsonntag";
+        document.getElementById('node-input-pfingstmontagName').value = "Pfingstmontag";
+        document.getElementById('node-input-fronleichnamName').value = "Fronleichnam";
+        document.getElementById('node-input-mariaHimmelfahrtName').value = "Maria Himmelfahrt";
+        document.getElementById('node-input-tagDerDeutschenEinheitName').value = "Tag der Deutschen Einheit";
+        document.getElementById('node-input-halloweenName').value = "Halloween";
+        document.getElementById('node-input-allerheiligenName').value = "Allerheiligen";
+        document.getElementById('node-input-stMartinName').value = "St. Martin";
+        document.getElementById('node-input-bussUndBettagName').value = "Buß und Bettag";
+        document.getElementById('node-input-nikolausName').value = "Nikolaus";
+        document.getElementById('node-input-advent1Name').value = "1. Advent";
+        document.getElementById('node-input-advent2Name').value = "2. Advent";
+        document.getElementById('node-input-advent3Name').value = "3. Advent";
+        document.getElementById('node-input-advent4Name').value = "4. Advent";
+        document.getElementById('node-input-heiligabendName').value = "Heiligabend";
+        document.getElementById('node-input-weihnachten1Name').value = "1. Weihnachtsfeiertag";
+        document.getElementById('node-input-weihnachten2Name').value = "2. Weihnachtsfeiertag";
+        document.getElementById('node-input-silvesterName').value = "Silvester";
+    }
 </script>
