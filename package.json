@@ -1,7 +1,7 @@
 {
   "author": "Marius Lang <lang.marius@t-online.de>",
   "dependencies": {
-    "getfeiertage.js": "1.0.0"
+    "getfeiertage.js": "1.1.1"
   },
   "deprecated": false,
   "description": "NodeRED node to get german holidays and own special dates",
