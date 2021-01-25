@@ -657,13 +657,14 @@
     <h3><span style="color: #339900;">Input</span></h3>
     <p>The input can be used to trigger special outputs. The keywords are listed below.</p>
     <ul>
-        <li><p><b>isTodayHoliday</b> outputs boolean wether today is holiday</p></li>
-        <li><p><b>isChristmasTime</b> outputs boolean wether roday is Chrismtmas time (1. Advent - Heilige drei Könige)</p></li>
-        <li><p><b>nextHoliday</b> outputs next holiday</p></li>
-        <li><p><b>nextThreeHolidays</b> outputs next 3 holidays</p></li>
-        <li><p><b>all</b> outputs every holiday</p></li>
+        <li><p><b>isTodayHoliday</b> boolean wether today is holiday</p></li>
+        <li><p><b>isChristmasTime</b> boolean wether today is Christmas time (1. Advent - Heilige drei Könige)</p></li>
+        <li><p><b>nextHoliday</b> information about next holiday</p></li>
+        <li><p><b>nextThreeHolidays</b> informations about next 3 holidays</p></li>
+        <li><p><b>all</b> informations about all holidays</p></li>
+        <li><p><b>daysUntilNextHoliday</b> number of days until next holidays</p></li>
     </ul>
-
+    
     <h3><span style="color: #339900">Output</span></h3>
     <p>The output can be used to listen to automatic and user triggerd events.</p>
     <p>Every day at 00:01 o'clock the node outputs a boolean value wether today is a holiday.</p>
