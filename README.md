@@ -70,7 +70,7 @@ all | informations about all holidays
 The output can be used to listen to automatic and user triggered events. Every day at 00:01 o'clock the node automaticly outputs a boolean value wether today is a holiday.
 
 You decide what you want to receive: Object or Array!
-To enable output as array open the node settings and hit the checkbox **output: Array instead of Object**.
+To enable output as array open the node settings and hit the checkbox **output: Array instead of Object** at the bottom.
 
 holiday object output:
 
