@@ -76,7 +76,7 @@ holiday object output:
 
 key | output
 --- | ---
-id | identifier
+id | id
 name | name
 dateObj | date (yyyy-mm-dd)
 dateDE | german date (dd.mm.yyyy)
@@ -85,7 +85,7 @@ holiday array[3] output:
 
 index | output
 --- | ---
-0 | identifier
+0 | id
 1 | name
 2 | date (yyyy-mm-dd)
 3 | german date (dd.mm.yyyy)
