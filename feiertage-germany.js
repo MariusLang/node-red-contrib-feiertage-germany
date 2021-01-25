@@ -124,6 +124,8 @@ module.exports = function(RED) {
         let monthOwnHoliday10 = config.ownHoliday10Month; // month Own Holiday 10
         let nameOwnHoliday10 = config.ownHoliday10Name; // name Own Holiday 10
 
+        let checkArray = config.array; // checkbox array or object
+
         let currentYear; // current year (yyyy)
         let currentMonth; // current month (1-12)
         let currentDay; // current day
@@ -514,7 +516,11 @@ module.exports = function(RED) {
             refreshHoliday(); // refresh holiday array
             sortHolidayArray(); // sort holiday array
             for (let i = 0; i < holiday.length; i++) {
-                node.send({payload: holiday[i]}); // send every item of holiday array
+                if (checkArray) {
+                    node.send({payload: Object.values(holiday[i])}); // send every item of holiday as Array
+                } else {
+                    node.send({payload: holiday[i]}); // send every item of holiday as Object
+                }
             }
         }
 
@@ -545,15 +551,25 @@ module.exports = function(RED) {
             // outputs next holiday
             refreshHoliday(); // refresh holiday array
             sortHolidayArray(); // sort holiday array
-            node.send({payload: holiday[holiday.length - 1]}); // send last item of holiday array
+            if (checkArray) {
+                node.send({payload: Object.values(holiday[holiday.length - 1])}); // send last item of holiday array as Array
+            } else {
+                node.send({payload: holiday[holiday.length - 1]}); // send last item of holiday array as Object
+            }
         }
 
         function sendNextThreeHolidays() {
             refreshHoliday(); // refresh holiday array
             sortHolidayArray(); // sort holiday array
-            node.send({payload: holiday[holiday.length - 1]}); // send last item of holiday array
-            node.send({payload: holiday[holiday.length - 2]}); // send penultimate item of holiday array
-            node.send({payload: holiday[holiday.length - 3]}); // send before penultimate item of holiday array
+            if (checkArray) {
+                node.send({payload: Object.values(holiday[holiday.length - 1])}); // send last item of holiday as Array
+                node.send({payload: Object.values(holiday[holiday.length - 2])}); // send penultimate item of holiday as Array
+                node.send({payload: Object.values(holiday[holiday.length - 3])}); // send before penultimate item of holiday as Array
+            } else {
+                node.send({payload: holiday[holiday.length - 1]}); // send last item of holiday as Object
+                node.send({payload: holiday[holiday.length - 2]}); // send penultimate item of holiday as Object
+                node.send({payload: holiday[holiday.length - 3]}); // send before penultimate item of holiday as Object
+            }
         }
 
         function isChristmasTime() {

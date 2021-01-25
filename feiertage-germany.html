@@ -641,6 +641,9 @@
     <hr>
 
     <div class="form-row">
+        <span><input style="width: 20px;" type="checkbox" id="node-input-array" placeholder="Array"> output: Array instead of Object</span>
+    </div>
+    <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
@@ -654,21 +657,32 @@
     <h3><span style="color: #339900;">Input</span></h3>
     <p>The input can be used to trigger special outputs. The keywords are listed below.</p>
     <ul>
-        <li><p><b>isTodayHoliday</b> outputs boolean wether today is holiday</p></li>
-        <li><p><b>isChristmasTime</b> outputs boolean wether roday is Chrismtmas time (1. Advent - Heilige drei Könige)</p></li>
-        <li><p><b>nextHoliday</b> outputs next holiday</p></li>
-        <li><p><b>nextThreeHolidays</b> outputs next 3 holidays</p></li>
-        <li><p><b>all</b> outputs every holiday</p></li>
+        <li><p><b>isTodayHoliday</b> boolean wether today is holiday</p></li>
+        <li><p><b>isChristmasTime</b> boolean wether today is Christmas time (1. Advent - Heilige drei Könige)</p></li>
+        <li><p><b>nextHoliday</b> information about next holiday</p></li>
+        <li><p><b>nextThreeHolidays</b> informations about next 3 holidays</p></li>
+        <li><p><b>all</b> informations about all holidays</p></li>
+        <li><p><b>daysUntilNextHoliday</b> number of days until next holidays</p></li>
     </ul>
-
+    
     <h3><span style="color: #339900">Output</span></h3>
     <p>The output can be used to listen to automatic and user triggerd events.</p>
     <p>Every day at 00:01 o'clock the node outputs a boolean value wether today is a holiday.</p>
-    <p>Holidays are always listed into an array[3].</p>
+    <p>You decide what you want to receive: Object or Array!</p>
+    <p>To enable output as array open the node settings and hit the checkbox <b>output: Array instead of Object</b> at the bottom.</p>
+    <p>holiday object output:</p>
     <ul>
-        <li><p><b>index 0:</b> english name</p></li>
+        <li><p><b>id</b> id</p></li>
+        <li><p><b>name</b> german name</p></li>
+        <li><p><b>dateObj</b> date (yyyy-mm-dd)</p></li>
+        <li><p><b>dateDE</b> date (dd-mm-yyyy)</p></li>
+    </ul>
+    <p>holiday array[3] output:</p>
+    <ul>
+        <li><p><b>index 0:</b> id</p></li>
         <li><p><b>index 1:</b> german name</p></li>
         <li><p><b>index 2:</b> date (yyyy-mm-dd)</p></li>
+        <li><p><b>index 3:</b> date (dd-mm-yyyy)</p></li>
     </ul>
 
     <h3><span style="color: #339900">own Holidays</span></h3>
@@ -785,7 +799,8 @@
             ownHoliday10: {value: false},
             ownHoliday10Day: {value: 10},
             ownHoliday10Month: {value: 10},
-            ownHoliday10Name: {value: "own Date 10"}
+            ownHoliday10Name: {value: "own Date 10"},
+            array: {value: false}
 		},
         inputs: 1,
         outputs: 1,

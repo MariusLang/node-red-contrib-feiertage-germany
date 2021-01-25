@@ -69,11 +69,23 @@ all | informations about all holidays
 ### Output
 The output can be used to listen to automatic and user triggered events. Every day at 00:01 o'clock the node automaticly outputs a boolean value wether today is a holiday.
 
-Holidays are always listed into an array[3].
+You decide what you want to receive: Object or Array!
+To enable output as array open the node settings and hit the checkbox **output: Array instead of Object** at the bottom.
+
+holiday object output:
+
+key | output
+--- | ---
+id | id
+name | name
+dateObj | date (yyyy-mm-dd)
+dateDE | german date (dd.mm.yyyy)
+
+holiday array[3] output:
 
 index | output
 --- | ---
-0 | identifier
+0 | id
 1 | name
 2 | date (yyyy-mm-dd)
 3 | german date (dd.mm.yyyy)
