@@ -1117,8 +1117,7 @@ module.exports = function (RED) {
       } else {
         for (let i = 0; i < holiday.length; i += 1) {
           const element = holiday[i];
-          node.send({ payload: new Date(element.dateObj).valueOf() - new Date(`${currentYear}-${currentMonth}-${currentDay}T00:00:00.000Z`).valueOf() });
-          if ((new Date(element.dateObj).valueOf() - new Date(`${currentYear}-${currentMonth}-${currentDay}T00:00:00.000Z`).valueOf()) === 0) {
+          if (new Date(element.dateObj).valueOf() - new Date(`${currentYear}-${currentMonth}-${currentDay}T00:00:00.000Z`).valueOf() === 0) {
             todayHoliday = true;
             break;
           } else {
