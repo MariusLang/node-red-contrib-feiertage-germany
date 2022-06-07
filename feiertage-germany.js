@@ -75,53 +75,53 @@ module.exports = function (RED) {
     const newYearsEveName = config.silvesterName; // Silvester Name
 
     const checkOwnHoliday1 = config.ownHoliday1; // checkbox Own Holiday 1
-    const dayOwnHoliday1 = config.ownHoliday1Day; // day Own Holiday 1
-    const monthOwnHoliday1 = config.ownHoliday1Month; // month Own Holiday 1
+    const dayOwnHoliday1 = config.ownHoliday1Day.toString().length === 1 ? `0${config.ownHoliday1Day}` : config.ownHoliday1Day; // day Own Holiday 1
+    const monthOwnHoliday1 = config.ownHoliday1Month.toString().length === 1 ? `0${config.ownHoliday1Month}` : config.ownHoliday1Month; // month Own Holiday 1
     const nameOwnHoliday1 = config.ownHoliday1Name; // name Own Holiday 1
 
     const checkOwnHoliday2 = config.ownHoliday2; // checkbox Own Holiday 2
-    const dayOwnHoliday2 = config.ownHoliday2Day; // day Own Holiday 2
-    const monthOwnHoliday2 = config.ownHoliday2Month; // month Own Holiday 2
+    const dayOwnHoliday2 = config.ownHoliday2Day.toString().length === 1 ? `0${config.ownHoliday2Day}` : config.ownHoliday2Day; // day Own Holiday 2
+    const monthOwnHoliday2 = config.ownHoliday2Month.toString().length === 1 ? `0${config.ownHoliday2Month}` : config.ownHoliday2Month; // month Own Holiday 2
     const nameOwnHoliday2 = config.ownHoliday2Name; // name Own Holiday 2
 
     const checkOwnHoliday3 = config.ownHoliday3; // checkbox Own Holiday 3
-    const dayOwnHoliday3 = config.ownHoliday3Day; // day Own Holiday 3
-    const monthOwnHoliday3 = config.ownHoliday3Month; // month Own Holiday 3
+    const dayOwnHoliday3 = config.ownHoliday3Day.toString().length === 1 ? `0${config.ownHoliday3Day}` : config.ownHoliday3Day; // day Own Holiday 3
+    const monthOwnHoliday3 = config.ownHoliday3Month.toString().length === 1 ? `0${config.ownHoliday3Month}` : config.ownHoliday3Month; // month Own Holiday 3
     const nameOwnHoliday3 = config.ownHoliday3Name; // name Own Holiday 3
 
     const checkOwnHoliday4 = config.ownHoliday4; // checkbox Own Holiday 4
-    const dayOwnHoliday4 = config.ownHoliday4Day; // day Own Holiday 4
-    const monthOwnHoliday4 = config.ownHoliday4Month; // month Own Holiday 4
+    const dayOwnHoliday4 = config.ownHoliday4Day.toString().length === 1 ? `0${config.ownHoliday4Day}` : config.ownHoliday4Day; // day Own Holiday 4
+    const monthOwnHoliday4 = config.ownHoliday4Month.toString().length === 1 ? `0${config.ownHoliday4Month}` : config.ownHoliday4Month; // month Own Holiday 4
     const nameOwnHoliday4 = config.ownHoliday4Name; // name Own Holiday 4
 
     const checkOwnHoliday5 = config.ownHoliday5; // checkbox Own Holiday 5
-    const dayOwnHoliday5 = config.ownHoliday5Day; // day Own Holiday 5
-    const monthOwnHoliday5 = config.ownHoliday5Month; // month Own Holiday 5
+    const dayOwnHoliday5 = config.ownHoliday5Day.toString().length === 1 ? `0${config.ownHoliday5Day}` : config.ownHoliday5Day; // day Own Holiday 5
+    const monthOwnHoliday5 = config.ownHoliday5Month.toString().length === 1 ? `0${config.ownHoliday5Month}` : config.ownHoliday5Month; // month Own Holiday 5
     const nameOwnHoliday5 = config.ownHoliday5Name; // name Own Holiday 5
 
     const checkOwnHoliday6 = config.ownHoliday6; // checkbox Own Holiday 6
-    const dayOwnHoliday6 = config.ownHoliday6Day; // day Own Holiday 6
-    const monthOwnHoliday6 = config.ownHoliday6Month; // month Own Holiday 6
+    const dayOwnHoliday6 = config.ownHoliday6Day.toString().length === 1 ? `0${config.ownHoliday6Day}` : config.ownHoliday6Day; // day Own Holiday 6
+    const monthOwnHoliday6 = config.ownHoliday6Month.toString().length === 1 ? `0${config.ownHoliday6Month}` : config.ownHoliday6Month; // month Own Holiday 6
     const nameOwnHoliday6 = config.ownHoliday6Name; // name Own Holiday 6
 
     const checkOwnHoliday7 = config.ownHoliday7; // checkbox Own Holiday 7
-    const dayOwnHoliday7 = config.ownHoliday7Day; // day Own Holiday 7
-    const monthOwnHoliday7 = config.ownHoliday7Month; // month Own Holiday 7
+    const dayOwnHoliday7 = config.ownHoliday7Day.toString().length === 1 ? `0${config.ownHoliday7Day}` : config.ownHoliday7Day; // day Own Holiday 7
+    const monthOwnHoliday7 = config.ownHoliday7Month.toString().length === 1 ? `0${config.ownHoliday7Month}` : config.ownHoliday7Month; // month Own Holiday 7
     const nameOwnHoliday7 = config.ownHoliday7Name; // name Own Holiday 7
 
     const checkOwnHoliday8 = config.ownHoliday8; // checkbox Own Holiday 8
-    const dayOwnHoliday8 = config.ownHoliday8Day; // day Own Holiday 8
-    const monthOwnHoliday8 = config.ownHoliday8Month; // month Own Holiday 8
+    const dayOwnHoliday8 = config.ownHoliday8Day.toString().length === 1 ? `0${config.ownHoliday8Day}` : config.ownHoliday8Day; // day Own Holiday 8
+    const monthOwnHoliday8 = config.ownHoliday8Month.toString().length === 1 ? `0${config.ownHoliday8Month}` : config.ownHoliday8Month; // month Own Holiday 8
     const nameOwnHoliday8 = config.ownHoliday8Name; // name Own Holiday 8
 
     const checkOwnHoliday9 = config.ownHoliday9; // checkbox Own Holiday 9
-    const dayOwnHoliday9 = config.ownHoliday9Day; // day Own Holiday 9
-    const monthOwnHoliday9 = config.ownHoliday9Month; // month Own Holiday 9
+    const dayOwnHoliday9 = config.ownHoliday9Day.toString().length === 1 ? `0${config.ownHoliday9Day}` : config.ownHoliday9Day; // day Own Holiday 9
+    const monthOwnHoliday9 = config.ownHoliday9Month.toString().length === 1 ? `0${config.ownHoliday9Month}` : config.ownHoliday9Month; // month Own Holiday 9
     const nameOwnHoliday9 = config.ownHoliday9Name; // name Own Holiday 9
 
     const checkOwnHoliday10 = config.ownHoliday10; // checkbox Own Holiday 10
-    const dayOwnHoliday10 = config.ownHoliday10Day; // day Own Holiday 10
-    const monthOwnHoliday10 = config.ownHoliday10Month; // month Own Holiday 10
+    const dayOwnHoliday10 = config.ownHoliday10Day.toString().length === 1 ? `0${config.ownHoliday10Day}` : config.ownHoliday10Day; // day Own Holiday 10
+    const monthOwnHoliday10 = config.ownHoliday10Month.toString().length === 1 ? `0${config.ownHoliday10Month}` : config.ownHoliday10Month; // month Own Holiday 10
     const nameOwnHoliday10 = config.ownHoliday10Name; // name Own Holiday 10
 
     const checkArray = config.array; // checkbox array or object
@@ -336,70 +336,70 @@ module.exports = function (RED) {
 
     function getOwnHoliday1(format, year) {
       if (format === formatDE) {
-        return `${dayOwnHoliday1}.${monthOwnHoliday1}.year`;
+        return `${dayOwnHoliday1}.${monthOwnHoliday1}.${year}`;
       }
       return `${year}-${monthOwnHoliday1}-${dayOwnHoliday1}`;
     }
 
     function getOwnHoliday2(format, year) {
       if (format === formatDE) {
-        return `${dayOwnHoliday2}.${monthOwnHoliday2}.year`;
+        return `${dayOwnHoliday2}.${monthOwnHoliday2}.${year}`;
       }
       return `${year}-${monthOwnHoliday2}-${dayOwnHoliday2}`;
     }
 
     function getOwnHoliday3(format, year) {
       if (format === formatDE) {
-        return `${dayOwnHoliday3}.${monthOwnHoliday3}.year`;
+        return `${dayOwnHoliday3}.${monthOwnHoliday3}.${year}`;
       }
       return `${year}-${monthOwnHoliday3}-${dayOwnHoliday3}`;
     }
 
     function getOwnHoliday4(format, year) {
       if (format === formatDE) {
-        return `${dayOwnHoliday4}.${monthOwnHoliday4}.year`;
+        return `${dayOwnHoliday4}.${monthOwnHoliday4}.${year}`;
       }
       return `${year}-${monthOwnHoliday4}-${dayOwnHoliday4}`;
     }
 
     function getOwnHoliday5(format, year) {
       if (format === formatDE) {
-        return `${dayOwnHoliday5}.${monthOwnHoliday5}.year`;
+        return `${dayOwnHoliday5}.${monthOwnHoliday5}.${year}`;
       }
       return `${year}-${monthOwnHoliday5}-${dayOwnHoliday5}`;
     }
 
     function getOwnHoliday6(format, year) {
       if (format === formatDE) {
-        return `${dayOwnHoliday6}.${monthOwnHoliday6}.year`;
+        return `${dayOwnHoliday6}.${monthOwnHoliday6}.${year}`;
       }
       return `${year}-${monthOwnHoliday6}-${dayOwnHoliday6}`;
     }
 
     function getOwnHoliday7(format, year) {
       if (format === formatDE) {
-        return `${dayOwnHoliday7}.${monthOwnHoliday7}.year`;
+        return `${dayOwnHoliday7}.${monthOwnHoliday7}.${year}`;
       }
       return `${year}-${monthOwnHoliday7}-${dayOwnHoliday7}`;
     }
 
     function getOwnHoliday8(format, year) {
       if (format === formatDE) {
-        return `${dayOwnHoliday8}.${monthOwnHoliday8}.year`;
+        return `${dayOwnHoliday8}.${monthOwnHoliday8}.${year}`;
       }
       return `${year}-${monthOwnHoliday8}-${dayOwnHoliday8}`;
     }
 
     function getOwnHoliday9(format, year) {
       if (format === formatDE) {
-        return `${dayOwnHoliday9}.${monthOwnHoliday9}.year`;
+        return `${dayOwnHoliday9}.${monthOwnHoliday9}.${year}`;
       }
       return `${year}-${monthOwnHoliday9}-${dayOwnHoliday9}`;
     }
 
     function getOwnHoliday10(format, year) {
       if (format === formatDE) {
-        return `${dayOwnHoliday10}.${monthOwnHoliday10}.year`;
+        return `${dayOwnHoliday10}.${monthOwnHoliday10}.${year}`;
       }
       return `${year}-${monthOwnHoliday10}-${dayOwnHoliday10}`;
     }
@@ -1105,7 +1105,7 @@ module.exports = function (RED) {
       } else {
         for (let i = 0; i < holiday.length; i += 1) {
           const element = holiday[i];
-          if (new Date(element.dateObj).valueOf() === new Date(`${currentYear}-${currentMonth}-${currentDay}`).valueOf()) {
+          if (new Date(element.dateObj).valueOf() - new Date(`${currentYear}-${currentMonth}-${currentDay}T00:00:00.000Z`).valueOf() === 0) {
             todayHoliday = true;
             break;
           } else {
