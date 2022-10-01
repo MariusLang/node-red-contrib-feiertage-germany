@@ -27,7 +27,7 @@
     "type": "git",
     "url": "git+https://github.com/MariusLang/node-red-contrib-feiertage-germany.git"
   },
-  "version": "1.4.3",
+  "version": "1.5.1",
   "bugs": {
     "url": "https://github.com/MariusLang/node-red-contrib-feiertage-germany/issues"
   },
