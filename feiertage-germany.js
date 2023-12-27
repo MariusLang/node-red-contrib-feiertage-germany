@@ -1109,7 +1109,7 @@ module.exports = function (RED) {
     }
 
     function isTodayHoliday() {
-      // outputs boolean wether today is holiday
+      // outputs boolean whether today is holiday
       refreshHoliday(); // refresh holiday array
       let todayHoliday;
       if (holiday.length === 0) {
@@ -1124,8 +1124,31 @@ module.exports = function (RED) {
             todayHoliday = false;
           }
         }
-        node.send({ payload: todayHoliday });
       }
+      node.send({ payload: todayHoliday });
+    }
+
+    function isTomorrowHoliday() {
+      // outputs boolean whether tomorrow is holiday
+      refreshHoliday(); // refresh holiday array
+      let tomorrowHoliday = false;
+      if (holiday.length !== 0) {
+        const tomorrowDate = new Date();
+        tomorrowDate.setDate(tomorrowDate.getDate() + 1);
+        for (let i = 0; i < holiday.length; i += 1) {
+          const element = holiday[i];
+          const holidayDate = new Date(element.dateObj);
+          if (
+            holidayDate.getFullYear() === tomorrowDate.getFullYear()
+            && holidayDate.getMonth() === tomorrowDate.getMonth()
+            && holidayDate.getDate() === tomorrowDate.getDate()
+          ) {
+            tomorrowHoliday = true;
+            break;
+          }
+        }
+      }
+      node.send({ payload: tomorrowHoliday });
     }
 
     function sendNextHoliday() {
@@ -1163,15 +1186,15 @@ module.exports = function (RED) {
 
     function isChristmasTime() {
       if (new Date(Feiertage.getAdvent1(
-        Feiertage.formatDateObj, currentYear,
-      )).valueOf() <= new Date().valueOf()
+          Feiertage.formatDateObj, currentYear,
+        )).valueOf() <= new Date().valueOf()
         && new Date(Feiertage.getSilvester(
           Feiertage.formatDateObj, currentYear,
         )).valueOf() >= new Date().valueOf()) {
         node.send({ payload: true });
       } else if (new Date(Feiertage.getNeujahr(
-        Feiertage.formatDateObj, currentYear,
-      )).valueOf() <= new Date().valueOf()
+          Feiertage.formatDateObj, currentYear,
+        )).valueOf() <= new Date().valueOf()
         && new Date(Feiertage.getHeiligeDreiKoenige(
           Feiertage.formatDateObj, currentYear,
         )).valueOf() >= new Date().valueOf()) {
@@ -1197,6 +1220,9 @@ module.exports = function (RED) {
           break;
         case 'isTodayHoliday':
           isTodayHoliday();
+          break;
+        case 'isTomorrowHoliday':
+          isTomorrowHoliday();
           break;
         case 'nextHoliday':
           sendNextHoliday();
@@ -1230,5 +1256,6 @@ module.exports = function (RED) {
       clearInterval(dailyInterval);
     });
   }
+
   RED.nodes.registerType('feiertageDE', feiertageDE);
 };
