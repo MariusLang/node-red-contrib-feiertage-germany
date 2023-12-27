@@ -67,6 +67,7 @@ The input can be used to trigger special outputs. The keywords are listed below.
 | msg.payload       | output                                                                    |
 |-------------------|---------------------------------------------------------------------------|
 | isTodayHoliday    | boolean whether today is holiday                                          |
+| isTomorrowHoliday | boolean whether tomorrow is holiday                                       |
 | isChristmasTime   | boolean whether today is Christmas time (1. Advent - Heilige drei Könige) |
 | nextHoliday       | information about next holiday                                            |
 | nextThreeHolidays | information about next 3 holidays                                         |
