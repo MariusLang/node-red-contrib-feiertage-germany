@@ -1,4 +1,5 @@
 ![banner](img/feiertage_banner_de.svg)
+
 # Node Red Feiertage Germany
 
 [![NPM](https://img.shields.io/npm/v/node-red-contrib-feiertage-germany)](https://www.npmjs.com/package/node-red-contrib-feiertage-germany)
@@ -7,29 +8,33 @@
 
 [![NPM](https://nodei.co/npm/node-red-contrib-feiertage-germany.png?compact=true)](https://nodei.co/npm/node-red-contrib-feiertage-germany/)
 
-The Node Red **Feiertage Germany** node is the ultimative node to get informations about german holidays.
+The Node Red **Feiertage Germany** node is the ultimate node to get information about german holidays.
 
 Is there any holiday missing? Write an issue! I'm going to add this holiday for you.
 
-This node was splitted out of the [node-red-contrib-feiertage](https://github.com/MariusLang/node-red-contrib-feiertage) node. This Node only contains **German** holidays.
-To get this node for an other country read the point below.
+This node was split out of the [node-red-contrib-feiertage](https://github.com/MariusLang/node-red-contrib-feiertage)
+node. This Node only contains **German** holidays.
+To get this node for another country read the point below.
 
 ## You're living in Germany, Austria or Switzerland?
 
-country | node-red node
---- | ---
-Germany | [node-red-contrib-feiertage-germany](https://github.com/MariusLang/node-red-contrib-feiertage-germany)
-Austria | [node-red-contrib-feiertage-austria](https://github.com/MariusLang/node-red-contrib-feiertage-austria)
-Switzerland | [node-red-contrib-feiertage-switzerland](https://github.com/MariusLang/node-red-contrib-feiertage-switzerland)
-Or you want all in one node (Germany, Austria, Switzerland) | [node-red-contrib-feiertage](https://github.com/MariusLang/node-red-contrib-feiertage)
+| country                                                     | node-red node                                                                                                  |
+|-------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| Germany                                                     | [node-red-contrib-feiertage-germany](https://github.com/MariusLang/node-red-contrib-feiertage-germany)         |
+| Austria                                                     | [node-red-contrib-feiertage-austria](https://github.com/MariusLang/node-red-contrib-feiertage-austria)         |
+| Switzerland                                                 | [node-red-contrib-feiertage-switzerland](https://github.com/MariusLang/node-red-contrib-feiertage-switzerland) |
+| Or you want all in one node (Germany, Austria, Switzerland) | [node-red-contrib-feiertage](https://github.com/MariusLang/node-red-contrib-feiertage)                         |
 
 ## Installation
+
 ```
 npm install node-red-contrib-feiertage-germany
 ```
 
 ## Getting Started
-At first, it's important to check that you have picked the rigth localisation and timezone on your device. Below you can find a manual how to change those settings on to a RaspberryPi.
+
+At first, it's important to check that you have picked the right localisation and timezone on your device. Below you can
+find a manual how to change those settings on to a RaspberryPi.
 
 Login into your Pi. Then open the settings with this command.
 
@@ -47,7 +52,7 @@ If your localisation is Germany chose **de_DE.UTF-8** as your local and **Europe
 ![pi_settings_2](img/pi_settings_2.PNG)
 
 After you have finished setup click **Finish**.
-To  make your changes valid reboot your pi.
+To make your changes valid reboot your pi.
 
 ```
 sudo reboot
@@ -56,48 +61,57 @@ sudo reboot
 ## Node Description
 
 ### Input
+
 The input can be used to trigger special outputs. The keywords are listed below.
 
-msg.payload | output
---- | ---
-isTodayHoliday | boolean wether today is holiday
-isChristmasTime | boolean wether today is Christmas time (1. Advent - Heilige drei Könige)
-nextHoliday | information about next holiday
-nextThreeHolidays | informations about next 3 holidays
-all | informations about all holidays
+| msg.payload       | output                                                                    |
+|-------------------|---------------------------------------------------------------------------|
+| isTodayHoliday    | boolean whether today is holiday                                          |
+| isChristmasTime   | boolean whether today is Christmas time (1. Advent - Heilige drei Könige) |
+| nextHoliday       | information about next holiday                                            |
+| nextThreeHolidays | information about next 3 holidays                                         |
+| all               | information about all holidays                                            |
 
 ### Output
-The output can be used to listen to automatic and user triggered events. Every day at 00:01 o'clock the node automaticly outputs a boolean value wether today is a holiday.
+
+The output can be used to listen to automatic and user triggered events. Every day at 00:01 o'clock the node
+automatically
+outputs a boolean value whether today is a holiday.
 
 You decide what you want to receive: Object or Array!
 To enable output as array open the node settings and hit the checkbox **output: Array instead of Object** at the bottom.
 
 holiday object output:
 
-key | output
---- | ---
-id | id
-name | name
-dateObj | date (yyyy-mm-dd)
-dateDE | german date (dd.mm.yyyy)
+| key     | output                   |
+|---------|--------------------------|
+| id      | id                       |
+| name    | name                     |
+| dateObj | date (yyyy-mm-dd)        |
+| dateDE  | german date (dd.mm.yyyy) |
 
 holiday array[3] output:
 
-index | output
---- | ---
-0 | id
-1 | name
-2 | date (yyyy-mm-dd)
-3 | german date (dd.mm.yyyy)
+| index | output                   |
+|-------|--------------------------|
+| 0     | id                       |
+| 1     | name                     |
+| 2     | date (yyyy-mm-dd)        |
+| 3     | german date (dd.mm.yyyy) |
 
 Every day at 12 am you will receive a boolean value whether today is a holiday if daily output is enabled.
 
 ### Own Holidays
-You can chose up to 10 own dates. Select the **day** in the first dropdown-menu and the **month** in the second. Chose a name for your holiday and type it into the input field. Don't forget to hit the checkbox to enable your own holiday. Pay attention: The node does NOT validate your own dates. So if you set the 30 febrary or the 31 april as date you wont't get an error message.
+
+You can choose up to 10 own dates. Select the **day** in the first dropdown-menu and the **month** in the second. Chose
+a name for your holiday and type it into the input field. Don't forget to hit the checkbox to enable your own holiday.
+Pay attention: The node does NOT validate your own dates. So if you set the 30 february or the 31 april as date you
+won't get an error message.
 
 ![own_holiday_example](img/own_holiday_example.PNG)
 
 ## Example Flow
+
 You can import this example into your Node Red flow.
 
 ![flow_example](img/flow_example.PNG)
